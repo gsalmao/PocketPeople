@@ -1,0 +1,14 @@
+{
+    "name": "PocketPeople.Coroutines",
+    "rootNamespace": "PocketPeople.Coroutines",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
