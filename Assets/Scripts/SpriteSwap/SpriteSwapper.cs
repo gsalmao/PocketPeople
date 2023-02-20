@@ -13,7 +13,7 @@ namespace PocketPeople.SpriteSwap
         [SerializeField] private SpriteSwapperData data;
         public int spriteIndex;
 
-        private void FixedUpdate() => spriteRenderer.sprite = data?.Sprites[Mathf.Clamp(spriteIndex, 0, data.Sprites.Length - 1)];
+        private void Update() => spriteRenderer.sprite = data?.Sprites[Mathf.Clamp(spriteIndex, 0, data.Sprites.Length - 1)];
 
     }
 }

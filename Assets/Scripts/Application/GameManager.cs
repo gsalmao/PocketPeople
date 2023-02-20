@@ -14,7 +14,6 @@ namespace PocketPeople.Application
         private void Awake()
         {
             Debugging = debugging;
-            Cursor.visible = false;
             Screen.SetResolution(1920, 1080, true);
         }
 
