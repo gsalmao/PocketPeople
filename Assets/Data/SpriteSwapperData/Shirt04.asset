@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1984e3fd110e5204281231b61623f960, type: 3}
+  m_Name: Shirt04
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -1820386072, guid: dcfe99f143ff51d449633492d0846077, type: 3}
+  - {fileID: -1640176526, guid: dcfe99f143ff51d449633492d0846077, type: 3}
+  - {fileID: -649132952, guid: dcfe99f143ff51d449633492d0846077, type: 3}
+  - {fileID: -1230564418, guid: dcfe99f143ff51d449633492d0846077, type: 3}
+  - {fileID: -418306403, guid: dcfe99f143ff51d449633492d0846077, type: 3}
+  - {fileID: 464814816, guid: dcfe99f143ff51d449633492d0846077, type: 3}
+  - {fileID: -1955398830, guid: dcfe99f143ff51d449633492d0846077, type: 3}
+  - {fileID: -2005680366, guid: dcfe99f143ff51d449633492d0846077, type: 3}
