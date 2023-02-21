@@ -3338,7 +3338,7 @@ Material:
   m_Name: BitPotion SDF Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
   m_ValidKeywords:
-  - GLOW_ON
+  - BEVEL_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -3372,7 +3372,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Ambient: 0.5
-    - _Bevel: 0.407
+    - _Bevel: 0.302
     - _BevelClamp: 0
     - _BevelOffset: 0
     - _BevelRoundness: 0
@@ -3381,7 +3381,7 @@ Material:
     - _BumpOutline: 0
     - _ColorMask: 15
     - _CullMode: 0
-    - _Diffuse: 0.5
+    - _Diffuse: 0.227
     - _FaceDilate: 0
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
@@ -3390,15 +3390,15 @@ Material:
     - _GlowOuter: 0.05
     - _GlowPower: 0.047
     - _GradientScale: 25
-    - _LightAngle: 3.1416
+    - _LightAngle: 3.67
     - _MaskSoftnessX: 0
     - _MaskSoftnessY: 0
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0.056
+    - _OutlineWidth: 0.063
     - _PerspectiveFilter: 0.875
-    - _Reflectivity: 10
+    - _Reflectivity: 12.76
     - _ScaleRatioA: 0.96
     - _ScaleRatioB: 0.78
     - _ScaleRatioC: 0.78
