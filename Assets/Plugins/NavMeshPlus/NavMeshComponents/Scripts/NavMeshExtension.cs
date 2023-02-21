@@ -1,27 +1,26 @@
-﻿using NavMeshPlus.Components;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace NavMeshPlus.Extensions
+namespace NavMeshComponents.Extensions
 {
     public abstract class NavMeshExtension: MonoBehaviour
     {
         public int Order { get; protected set; }
-        public virtual void CollectSources(NavMeshSurface2d surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState) { }
-        public virtual void CalculateWorldBounds(NavMeshSurface2d surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState) { }
-        public virtual void PostCollectSources(NavMeshSurface2d surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState) { }
-        public NavMeshSurface2d NavMeshSurfaceOwner
+        public virtual void CollectSources(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState) { }
+        public virtual void CalculateWorldBounds(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState) { }
+        public virtual void PostCollectSources(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState) { }
+        public NavMeshSurface NavMeshSurfaceOwner
         {
             get
             {
                 if (m_navMeshOwner == null)
-                    m_navMeshOwner = GetComponent<NavMeshSurface2d>();
+                    m_navMeshOwner = GetComponent<NavMeshSurface>();
                 return m_navMeshOwner;
             }
         }
-        NavMeshSurface2d m_navMeshOwner;
+        NavMeshSurface m_navMeshOwner;
 
         protected virtual void Awake()
         {

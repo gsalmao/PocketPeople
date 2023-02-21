@@ -1,13 +1,12 @@
 ﻿using UnityEngine.AI;
 using UnityEngine;
 using UnityEditor;
-using NavMeshPlus.Extensions;
 
-namespace NavMeshPlus.Editors.Extensions
+namespace NavMeshComponents.Extensions
 {
     [CanEditMultipleObjects]
-    [CustomEditor(typeof(CollectSources2d))]
-    internal class CollectSources2dEditor: Editor
+    [CustomEditor(typeof(NavMeshCollectSources2d))]
+    internal class NavMeshCollectSources2dEditor: Editor
     {
         SerializedProperty m_OverrideByGrid;
         SerializedProperty m_UseMeshPrefab;
@@ -25,7 +24,7 @@ namespace NavMeshPlus.Editors.Extensions
         {
             serializedObject.Update();
     
-            var surf = target as CollectSources2d;
+            var surf = target as NavMeshCollectSources2d;
 
             EditorGUILayout.PropertyField(m_OverrideByGrid);
             using (new EditorGUI.DisabledScope(!m_OverrideByGrid.boolValue))
@@ -47,15 +46,15 @@ namespace NavMeshPlus.Editors.Extensions
                 GUILayout.Space(EditorGUIUtility.labelWidth);
                 if (GUILayout.Button("Rotate Surface to XY"))
                 {
-                    foreach (CollectSources2d item in targets)
+                    foreach (NavMeshCollectSources2d item in targets)
                     {
                         item.transform.rotation = Quaternion.Euler(-89.98f, 0f, 0f);
                     }
                 }
                 GUILayout.EndHorizontal();
-                foreach (CollectSources2d navSurface in targets)
+                foreach (NavMeshCollectSources2d navSurface in targets)
                 {
-                    if (!Mathf.Approximately(navSurface.transform.eulerAngles.x, 270.0198f) && !Mathf.Approximately(navSurface.transform.eulerAngles.x, 270f))
+                    if (!Mathf.Approximately(navSurface.transform.eulerAngles.x, 270.0198f))
                     {
                         EditorGUILayout.HelpBox("NavMeshSurface is not rotated respectively to (x-90;y0;z0). Apply rotation unless intended.", MessageType.Warning);
                     }

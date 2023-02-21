@@ -1,13 +1,12 @@
-﻿using NavMeshPlus.Components;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace NavMeshPlus.Extensions
+namespace NavMeshComponents.Extensions
 {
     [ExecuteAlways]
-    [AddComponentMenu("Navigation/NavMesh CacheSources2d", 30)]
-    public class CollectSourcesCache2d : NavMeshExtension
+    [AddComponentMenu("Navigation/NavMeshCacheSources2d", 30)]
+    public class NavMeshCacheSources2d: NavMeshExtension
     {
         List<NavMeshBuildSource> _sources;
         Dictionary<UnityEngine.Object, NavMeshBuildSource> _lookup;
@@ -83,7 +82,7 @@ namespace NavMeshPlus.Extensions
         {
             return UpdateNavMesh(NavMeshSurfaceOwner.navMeshData);
         }
-        public override void CollectSources(NavMeshSurface2d surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navMeshState)
+        public override void CollectSources(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navMeshState)
         {
             _lookup.Clear();
             IsDirty = false;
@@ -100,7 +99,7 @@ namespace NavMeshPlus.Extensions
             _lookup.Add(component, source);
         }
 
-        public override void PostCollectSources(NavMeshSurface2d surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState)
+        public override void PostCollectSources(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState)
         {
             _sourcesBounds = navNeshState.worldBounds;
             _sources = sources;

@@ -1,10 +1,9 @@
 using System.Collections.Generic;
-using UnityEngine;
 
-namespace NavMeshPlus.Components
+namespace UnityEngine.AI
 {
     [ExecuteInEditMode]
-    [AddComponentMenu("Navigation/Navigation ModifierVolume", 31)]
+    [AddComponentMenu("Navigation/NavMeshModifierVolume", 31)]
     [HelpURL("https://github.com/Unity-Technologies/NavMeshComponents#documentation-draft")]
     public class NavMeshModifierVolume : MonoBehaviour
     {

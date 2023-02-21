@@ -1,19 +1,15 @@
-﻿using NavMeshPlus.Components;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
-using Object = UnityEngine.Object;
 
-namespace NavMeshPlus.Extensions
+namespace UnityEngine.AI
 {
     class NavMeshBuilder2dState
     {
         public Dictionary<Sprite, Mesh> map;
         public Dictionary<uint, Mesh> coliderMap;
-        public Action<UnityEngine.Object, NavMeshBuildSource> lookupCallback;
+        public Action<Object, NavMeshBuildSource> lookupCallback;
         public int defaultArea;
         public int layerMask;
         public int agentID;
@@ -22,7 +18,7 @@ namespace NavMeshPlus.Extensions
         public bool compressBounds;
         public Vector3 overrideVector;
         public NavMeshCollectGeometry CollectGeometry;
-        public CollectObjects CollectObjects;
+        public CollectObjects2d CollectObjects;
         public GameObject parent;
         public bool hideEditorLogs;
         
@@ -79,22 +75,21 @@ namespace NavMeshPlus.Extensions
         {
             switch (CollectObjects)
             {
-                case CollectObjects.Children: return new[] { parent };
-                case CollectObjects.Volume:
-                case CollectObjects.All:
+                case CollectObjects2d.Children: return new[] { parent };
+                case CollectObjects2d.Volume: 
+                case CollectObjects2d.All:
                 default:
+                {
+                    var list = new List<GameObject>();
+                    var testlist = new List<GameObject>();
+                    for (int i = 0; i < SceneManager.sceneCount; ++i)
                     {
-                        var list = new List<GameObject>();
-                        var roots = new List<GameObject>();
-                        for (int i = 0; i < SceneManager.sceneCount; ++i)
-                        {
-                            var s = SceneManager.GetSceneAt(i);
-                            if (!s.isLoaded) continue;
-                            s.GetRootGameObjects(list);
-                            roots.AddRange(list);
-                        }
-                        return roots;
+                        var s = SceneManager.GetSceneAt(i);
+                        s.GetRootGameObjects(list);
+                        testlist.AddRange(list);
                     }
+                    return testlist;
+                }
             }
         }
     }
@@ -105,6 +100,7 @@ namespace NavMeshPlus.Extensions
         {
             foreach (var it in builder.Root)
             {
+                if(!it.activeSelf){continue;}
                 CollectSources(it, sources, builder);
             }
             if (!builder.hideEditorLogs) Debug.Log("Sources " + sources.Count);

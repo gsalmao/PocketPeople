@@ -1,10 +1,7 @@
-using NavMeshPlus.Components;
-using UnityEditor;
-using UnityEditor.AI;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace NavMeshPlus.Editors.Components
+namespace UnityEditor.AI
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(NavMeshLink))]
@@ -268,7 +265,7 @@ namespace NavMeshPlus.Editors.Components
             Handles.color = oldColor;
         }
 
-        [MenuItem("GameObject/Navigation/NavMesh Link", false, 2002)]
+        [MenuItem("GameObject/AI/NavMesh Link", false, 2002)]
         static public void CreateNavMeshLink(MenuCommand menuCommand)
         {
             var parent = menuCommand.context as GameObject;

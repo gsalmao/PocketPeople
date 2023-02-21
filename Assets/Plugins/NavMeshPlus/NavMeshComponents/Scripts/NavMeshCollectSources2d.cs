@@ -1,14 +1,17 @@
-﻿using NavMeshPlus.Components;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Tilemaps;
 
-namespace NavMeshPlus.Extensions
+namespace NavMeshComponents.Extensions
 {
     [ExecuteAlways]
-    [AddComponentMenu("Navigation/NavMesh CollectSources2d", 30)]
-    public class CollectSources2d: NavMeshExtension
+    [AddComponentMenu("Navigation/NavMeshCollectSources2d", 30)]
+    public class NavMeshCollectSources2d: NavMeshExtension
     {
         [SerializeField]
         bool m_OverrideByGrid;
@@ -26,7 +29,7 @@ namespace NavMeshPlus.Extensions
         Vector3 m_OverrideVector = Vector3.one;
         public Vector3 overrideVector { get { return m_OverrideVector; } set { m_OverrideVector = value; } }
 
-        public override void CalculateWorldBounds(NavMeshSurface2d surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState)
+        public override void CalculateWorldBounds(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState)
         {
             if (surface.collectObjects != CollectObjects.Volume)
             {
@@ -34,7 +37,7 @@ namespace NavMeshPlus.Extensions
             }
         }
 
-        private static Bounds CalculateGridWorldBounds(NavMeshSurface2d surface, Matrix4x4 worldToLocal, Bounds bounds)
+        private static Bounds CalculateGridWorldBounds(NavMeshSurface surface, Matrix4x4 worldToLocal, Bounds bounds)
         {
             var grid = FindObjectOfType<Grid>();
             var tilemaps = grid?.GetComponentsInChildren<Tilemap>();
@@ -44,7 +47,7 @@ namespace NavMeshPlus.Extensions
             }
             foreach (var tilemap in tilemaps)
             {
-                var lbounds = NavMeshSurface2d.GetWorldBounds(worldToLocal * tilemap.transform.localToWorldMatrix, tilemap.localBounds);
+                var lbounds = NavMeshSurface.GetWorldBounds(worldToLocal * tilemap.transform.localToWorldMatrix, tilemap.localBounds);
                 bounds.Encapsulate(lbounds);
                 if (!surface.hideEditorLogs)
                 {
@@ -55,7 +58,7 @@ namespace NavMeshPlus.Extensions
             return bounds;
         }
 
-        public override void CollectSources(NavMeshSurface2d surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState)
+        public override void CollectSources(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState)
         {
             if (!surface.hideEditorLogs)
             {
@@ -80,7 +83,7 @@ namespace NavMeshPlus.Extensions
             builder.compressBounds = compressBounds;
             builder.overrideVector = overrideVector;
             builder.CollectGeometry = surface.useGeometry;
-            builder.CollectObjects = (CollectObjects)(int)surface.collectObjects;
+            builder.CollectObjects = (CollectObjects2d)(int)surface.collectObjects;
             builder.parent = surface.gameObject;
             builder.hideEditorLogs = surface.hideEditorLogs;
             builder.SetRoot(navNeshState.roots);

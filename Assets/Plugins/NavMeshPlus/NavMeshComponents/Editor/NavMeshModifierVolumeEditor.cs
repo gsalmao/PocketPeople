@@ -2,12 +2,8 @@ using UnityEditor.IMGUI.Controls;
 using UnityEditorInternal;
 using UnityEngine.AI;
 using UnityEngine;
-using NavMeshPlus.Extensions;
-using UnityEditor;
-using UnityEditor.AI;
-using NavMeshPlus.Components;
 
-namespace NavMeshPlus.Editors.Components
+namespace UnityEditor.AI
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(NavMeshModifierVolume))]
@@ -136,7 +132,7 @@ namespace NavMeshPlus.Editors.Components
             }
         }
 
-        [MenuItem("GameObject/Navigation/NavMesh Modifier Volume", false, 2001)]
+        [MenuItem("GameObject/AI/NavMesh Modifier Volume", false, 2001)]
         static public void CreateNavMeshModifierVolume(MenuCommand menuCommand)
         {
             var parent = menuCommand.context as GameObject;

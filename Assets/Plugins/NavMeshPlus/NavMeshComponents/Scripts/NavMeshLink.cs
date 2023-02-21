@@ -1,13 +1,11 @@
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.AI;
 
-namespace NavMeshPlus.Components
+namespace UnityEngine.AI
 {
     [ExecuteInEditMode]
     [DefaultExecutionOrder(-101)]
-    [AddComponentMenu("Navigation/Navigation Link", 33)]
-    [HelpURL("https://github.com/Unity-Technologies/NavMeshPlus#documentation-draft")]
+    [AddComponentMenu("Navigation/NavMeshLink", 33)]
+    [HelpURL("https://github.com/Unity-Technologies/NavMeshComponents#documentation-draft")]
     public class NavMeshLink : MonoBehaviour
     {
         [SerializeField]

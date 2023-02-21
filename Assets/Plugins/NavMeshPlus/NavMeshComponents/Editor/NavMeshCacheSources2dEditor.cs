@@ -1,20 +1,19 @@
 ﻿using UnityEngine.AI;
 using UnityEngine;
 using UnityEditor;
-using NavMeshPlus.Extensions;
 
-namespace NavMeshPlus.Editors.Extensions
+namespace NavMeshComponents.Extensions
 {
     [CanEditMultipleObjects]
-    [CustomEditor(typeof(CollectSourcesCache2d))]
-    internal class CollectSourcesCache2dEditor : Editor
+    [CustomEditor(typeof(NavMeshCacheSources2d))]
+    internal class NavMeshCacheSources2dEditor: Editor
     {
 
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
     
-            var surf = target as CollectSourcesCache2d;
+            var surf = target as NavMeshCacheSources2d;
 
             serializedObject.ApplyModifiedProperties();
             using (new EditorGUI.DisabledScope(!Application.isPlaying))
