@@ -1,0 +1,18 @@
+{
+    "name": "PocketPeople.UI",
+    "rootNamespace": "PocketPeople.UI",
+    "references": [
+        "GUID:4a3b27fc3a8d6ac4197ef50869174f22",
+        "GUID:d055970d43ebe2d449fe0b1d2fd48b63",
+        "GUID:2520b0ee1de8ece448f678fcf2f8258b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

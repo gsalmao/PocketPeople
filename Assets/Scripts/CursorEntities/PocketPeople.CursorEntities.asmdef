@@ -1,0 +1,14 @@
+{
+    "name": "PocketPeople.CursorEntities",
+    "rootNamespace": "PocketPeople.CursorEntities",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -61,7 +61,7 @@ namespace PocketPeople.Application
         }
 
         /// <summary>
-        /// Load the next scene, set it as active and unload the current one.
+        /// Unload the current scene, load the next one, and set it as active.
         /// </summary>
         [Button("Change Scene")]
         public static void ChangeScene(string nextScene, Action callback)

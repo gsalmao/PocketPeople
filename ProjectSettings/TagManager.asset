@@ -50,6 +50,9 @@ TagManager:
   - name: Objects
     uniqueID: 3573255415
     locked: 0
+  - name: Characters
+    uniqueID: 1844034509
+    locked: 0
   - name: Above
     uniqueID: 2774284439
     locked: 0
