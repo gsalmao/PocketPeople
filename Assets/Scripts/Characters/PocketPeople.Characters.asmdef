@@ -1,12 +1,9 @@
 {
-    "name": "NodeCanvasCustom.Actions",
+    "name": "PocketPeople.Characters",
     "rootNamespace": "",
     "references": [
-        "GUID:d055970d43ebe2d449fe0b1d2fd48b63",
-        "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:4a3b27fc3a8d6ac4197ef50869174f22",
-        "GUID:e83614274b27c7e47b4530eaa0e0dc89",
-        "GUID:da3b6729b2b6fdc4c87554c358914c74"
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:58384fb66d6b93d4bae449a2b2ef4f60"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

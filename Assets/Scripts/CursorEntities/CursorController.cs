@@ -28,15 +28,15 @@ namespace PocketPeople.CursorEntities
             switch(cursorMode)
             {
                 case CursorType.Idle:
-                    Cursor.SetCursor(IdleCursor, Vector2.zero, CursorMode.ForceSoftware);
+                    Cursor.SetCursor(IdleCursor, Vector2.zero, CursorMode.Auto);
                     break;
 
                 case CursorType.Hover:
-                    Cursor.SetCursor(HoverCursor, Vector2.zero, CursorMode.ForceSoftware);
+                    Cursor.SetCursor(HoverCursor, Vector2.zero, CursorMode.Auto);
                     break;
 
                 case CursorType.Pressing:
-                    Cursor.SetCursor(PressingCursor, Vector2.zero, CursorMode.ForceSoftware);
+                    Cursor.SetCursor(PressingCursor, Vector2.zero, CursorMode.Auto);
                     break;
             }
         }

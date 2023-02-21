@@ -1,12 +1,10 @@
 {
-    "name": "NodeCanvasCustom.Actions",
+    "name": "NodeCanvasCustom.Conditions",
     "rootNamespace": "",
     "references": [
         "GUID:d055970d43ebe2d449fe0b1d2fd48b63",
-        "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:4a3b27fc3a8d6ac4197ef50869174f22",
-        "GUID:e83614274b27c7e47b4530eaa0e0dc89",
-        "GUID:da3b6729b2b6fdc4c87554c358914c74"
+        "GUID:8c4dd21966739024fbd72155091d199e",
+        "GUID:e83614274b27c7e47b4530eaa0e0dc89"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
