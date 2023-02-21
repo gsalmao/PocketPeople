@@ -166,7 +166,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -360,7 +360,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3c5c2e70678ff4b83d400cdf868c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugging: 0
+  debugging: 1
 --- !u!4 &1572384517
 Transform:
   m_ObjectHideFlags: 0
@@ -514,8 +514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e73663bc1923b64492312f0ed1bb80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 530433459}
-  firstScene: MainMenu
+  fadeAnimator: {fileID: 530433459}
+  firstScene: Gameplay
 --- !u!114 &1572384519
 MonoBehaviour:
   m_ObjectHideFlags: 0

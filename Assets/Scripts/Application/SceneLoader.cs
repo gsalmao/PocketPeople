@@ -13,7 +13,7 @@ namespace PocketPeople.Application
     /// </summary>
     public class SceneLoader : MonoBehaviour
     {
-        [SerializeField] private Animator animator;
+        [SerializeField] private Animator fadeAnimator;
         [SerializeField] private string firstScene;
 
         private static event Action<string, Action> OnChangeScene = delegate { };
@@ -41,6 +41,7 @@ namespace PocketPeople.Application
                 {
                     if (scene.name != application)
                     {
+                        fadeAnimator.Play(fadeIn);
                         SceneManager.SetActiveScene(scene);
                         break;
                     }
@@ -54,8 +55,8 @@ namespace PocketPeople.Application
         private IEnumerator InitCoroutine(string scene)
         {
             yield return LoadScene(scene);
-            animator.Play(fadeIn);
-            yield return MainCoroutines.WaitAnimation(animator);
+            fadeAnimator.Play(fadeIn);
+            yield return MainCoroutines.WaitAnimation(fadeAnimator);
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(scene));
         }
 
@@ -75,8 +76,8 @@ namespace PocketPeople.Application
         private IEnumerator SwitchSceneCoroutine(string scene, Action callback)
         {
             switchingScenes = true;
-            animator.Play(fadeOut);
-            yield return MainCoroutines.WaitAnimation(animator);
+            fadeAnimator.Play(fadeOut);
+            yield return MainCoroutines.WaitAnimation(fadeAnimator);
 
             string currentSceneActive = SceneManager.GetActiveScene().name;
             yield return UnloadScene(currentSceneActive);
@@ -84,8 +85,8 @@ namespace PocketPeople.Application
             yield return LoadScene(scene);
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(scene));
 
-            animator.Play(fadeIn);
-            yield return MainCoroutines.WaitAnimation(animator);
+            fadeAnimator.Play(fadeIn);
+            yield return MainCoroutines.WaitAnimation(fadeAnimator);
 
             callback?.Invoke();
             switchingScenes = false;
