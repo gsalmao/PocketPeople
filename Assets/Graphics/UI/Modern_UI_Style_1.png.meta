@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -31351,8 +31351,8 @@ TextureImporter:
       Modern_UI_Style_1_1169: -654373793
       Modern_UI_Style_1_1066: -39372755
       Modern_UI_Style_1_646: -1429150089
-      Modern_UI_Style_1_641: 467668680
       Modern_UI_Style_1_1178: -332979959
+      Modern_UI_Style_1_641: 467668680
       Modern_UI_Style_1_955: 140032640
       Modern_UI_Style_1_1069: -75676525
       Modern_UI_Style_1_1105: 368235720

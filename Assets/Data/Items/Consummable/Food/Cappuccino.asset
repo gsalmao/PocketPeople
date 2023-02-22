@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7384d52974c47944c83113b6b66ab07c, type: 3}
   m_Name: Cappuccino
   m_EditorClassIdentifier: 
-  itemName: 
-  description: 
-  icon: {fileID: 0}
-  buyPrice: 0
-  sellPrice: 0
-  foodAmount: 0
-  waterAmount: 0
+  itemName: Cappuccino
+  description: A delicious and milky cappuccino.
+  buyPrice: 10
+  sellPrice: 5
+  icon: {fileID: -2123419226, guid: 03e3f9aba5d6cde4ebc0c95a5d7f2213, type: 3}
+  foodAmount: 15
+  waterAmount: 30

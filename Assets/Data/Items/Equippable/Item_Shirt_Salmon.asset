@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4585ec410c6c284db5ccce93eecdc0e, type: 3}
+  m_Name: Item_Shirt_Salmon
+  m_EditorClassIdentifier: 
+  itemName: Salmon Shirt
+  description: A smooth color, it probably has some powers to make people around
+    you calmer.
+  buyPrice: 100
+  sellPrice: 50
+  icon: {fileID: 21300000, guid: b4b2aba334249a543ba3a97466c0c1b5, type: 3}
+  spritesData: {fileID: 11400000, guid: a3a663bd7673484408599bb69a5d9fa4, type: 2}

@@ -1,0 +1,16 @@
+{
+    "name": "PocketPeople.Interactables",
+    "rootNamespace": "",
+    "references": [
+        "GUID:2520b0ee1de8ece448f678fcf2f8258b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

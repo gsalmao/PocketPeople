@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 6050465051195644078}
-  data: {fileID: 11400000, guid: e98abab0b85fcdc45bbb14dedf4a3770, type: 2}
+  data: {fileID: 0}
   spriteIndex: 0
 --- !u!1 &1576746178771266667
 GameObject:
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca3e68d7153cbf459f6c4363e23d0af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityRenderers:
+  spriteLayers:
   - spriteRenderer: {fileID: 9038683086103150785}
     modifier: 0
   - spriteRenderer: {fileID: 3349867010691355827}
@@ -447,7 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 3349867010691355827}
-  data: {fileID: 11400000, guid: fcf2e8ecc01124c43ab135f012ff8cb4, type: 2}
+  data: {fileID: 0}
   spriteIndex: 0
 --- !u!1 &7926652884614750406
 GameObject:
@@ -579,5 +579,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 538129080584004901}
-  data: {fileID: 11400000, guid: b0761cc7822f79f49b1f2e853650db41, type: 2}
+  data: {fileID: 0}
   spriteIndex: 0

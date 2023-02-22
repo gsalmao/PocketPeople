@@ -40,12 +40,11 @@ namespace PocketPeople.CursorEntities
                     break;
             }
         }
-
-        public enum CursorType
-        {
-            Idle,
-            Hover,
-            Pressing
-        }
+    }
+    public enum CursorType
+    {
+        Idle,
+        Hover,
+        Pressing
     }
 }
