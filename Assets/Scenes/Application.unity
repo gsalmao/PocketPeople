@@ -296,7 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EventMask:
     serializedVersion: 2
-    m_Bits: 640
+    m_Bits: 544
   m_MaxRayIntersections: 0
 --- !u!1 &530433458
 GameObject:

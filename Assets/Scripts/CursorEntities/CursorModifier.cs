@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,12 +9,12 @@ namespace PocketPeople.CursorEntities
     /// </summary>
     public class CursorModifier : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, ICursorCallbacks
     {
-        private bool isActive = false;
-
         public event Action OnPointerEnterCallback = delegate { };
         public event Action OnPointerDownCallback = delegate{ };
         public event Action OnPointerExitCallback = delegate{ };
         public event Action OnPointerUpCallback = delegate{ };
+
+        private bool isActive = true;
 
         public bool IsActive
         {
@@ -22,22 +22,29 @@ namespace PocketPeople.CursorEntities
 
             set
             {
-                if (pointeOverThis)
-                    CursorController.SetCursor(CursorType.Idle);
+                if(pointerOverThis)
+                {
+                    if(value == true) //Hey, I could use if(value), but this way I read it easier.(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧
+                        CursorController.SetCursor(CursorType.Hover);
+                    else
+                        CursorController.SetCursor(CursorType.Idle);
+                }
+                
                 isActive = value;
             }
         }
 
-        private bool pointeOverThis = false;
+        private bool pointerOverThis = false;
 
         private void OnDisable() => CursorController.SetCursor(CursorType.Idle);
 
         public void OnPointerEnter(PointerEventData eventData)
         {
+            pointerOverThis = true;
+
             if (!IsActive)
                 return;
 
-            pointeOverThis = true;
             CursorController.SetCursor(CursorType.Hover);
             OnPointerEnterCallback();
         }
@@ -53,10 +60,11 @@ namespace PocketPeople.CursorEntities
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            pointerOverThis = false;
+
             if (!IsActive)
                 return;
 
-            pointeOverThis = false;
             CursorController.SetCursor(CursorType.Idle);
             OnPointerExitCallback();
         }
@@ -66,7 +74,7 @@ namespace PocketPeople.CursorEntities
             if (!IsActive)
                 return;
 
-            if (pointeOverThis)
+            if (pointerOverThis)
                 CursorController.SetCursor(CursorType.Hover);
             else
                 CursorController.SetCursor(CursorType.Idle);

@@ -1,4 +1,5 @@
 using PocketPeople.Inputs;
+using PocketPeople.Items;
 using UnityEngine;
 
 namespace PocketPeople.Characters.Player
@@ -7,6 +8,7 @@ namespace PocketPeople.Characters.Player
     {
         [SerializeField] private Rigidbody2D rb2d;
         [SerializeField] private Animator animator;
+        [SerializeField] private Inventory inventory;
         [SerializeField] private float speed;
 
         private MainInput mainInput;
@@ -14,7 +16,12 @@ namespace PocketPeople.Characters.Player
         private Vector2 moveDirection;
         private float playerRotation;
 
-        private void Awake() => mainInput = new MainInput();
+        private void Awake()
+        {
+            mainInput = new MainInput();
+            inventory.InitInventory();
+        }
+
         private void OnEnable() => mainInput.Enable();
         private void OnDisable() => mainInput.Disable();
 
