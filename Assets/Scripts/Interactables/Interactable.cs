@@ -6,9 +6,9 @@ using System;
 /// </summary>
 public class Interactable : CursorModifier
 {
-    public static Action<bool> OnToggleInteraction = delegate { };
+    public static Action<bool> OnToggleInteractions = delegate { };
 
-    private void Awake() => IsActive = false;
+    protected virtual void Awake() => IsActive = false;
 
     protected override void OnEnable()
     {

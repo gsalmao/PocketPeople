@@ -2,7 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-namespace PocketPeople.Items
+namespace PocketPeople.Items.UI
 {
     /// <summary>
     /// Draws the item description in the description window. Uses a static method to prevent the need of referencing inside buttons.

@@ -1,7 +1,10 @@
 {
-    "name": "PocketPeople.Interactables",
-    "rootNamespace": "",
+    "name": "PocketPeople.Items.UI",
+    "rootNamespace": "PocketPeople.Items.UI",
     "references": [
+        "GUID:071191d518e2c934ca8c5d4e008ca479",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:5faba8e5996223341908a2b412aea5dc",
         "GUID:2520b0ee1de8ece448f678fcf2f8258b"
     ],
     "includePlatforms": [],

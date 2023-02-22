@@ -406,6 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryContent: {fileID: 3697504842052371178}
+  itemButtonPrefab: {fileID: 7299680575886408531, guid: d8c27f07ec7496e4e97a7c7c395fe742, type: 3}
 --- !u!1 &5171862242409723914
 GameObject:
   m_ObjectHideFlags: 0

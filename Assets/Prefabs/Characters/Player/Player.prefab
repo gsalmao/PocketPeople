@@ -628,13 +628,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6816826907247803531}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: ToggleInventory
+      - m_Target: {fileID: 2769814235886594427}
+        m_TargetAssemblyTypeName: PocketPeople.Items.UI.InventoryUI, PocketPeople.Items.UI
+        m_MethodName: ToggleMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -889,10 +889,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5942587846722613925}
-  - component: {fileID: 6816826907247803531}
   - component: {fileID: 5371094967905422552}
+  - component: {fileID: 2769814235886594427}
   m_Layer: 0
-  m_Name: Inventory
+  m_Name: InventoryUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -921,38 +921,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6816826907247803531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8534129696066062733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d651911438bbb4ba3b80a7f70d5118, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 5371094967905422552}
-  itemButtonPrefab: {fileID: 5354134607337345485, guid: d8c27f07ec7496e4e97a7c7c395fe742, type: 3}
-  itemMenu: {fileID: 7427642885589079892}
-  items:
-  - {fileID: 11400000, guid: dfce0c20a0449694cb4fe937f501538c, type: 2}
-  - {fileID: 11400000, guid: dfce0c20a0449694cb4fe937f501538c, type: 2}
-  - {fileID: 11400000, guid: aca23b1bfdc197e47bc899add36b2c90, type: 2}
-  - {fileID: 11400000, guid: 6685c3496eef21641807018bf58ed22c, type: 2}
-  - {fileID: 11400000, guid: d7a817747c2b04e41a8a6243140033d5, type: 2}
-  - {fileID: 11400000, guid: c949fb880ef069b42aa6279915cbdde2, type: 2}
-  - {fileID: 11400000, guid: 064204e2c61c12e40b045806a4584651, type: 2}
-  - {fileID: 11400000, guid: da614cb3310e2d440bd021091ea11c35, type: 2}
-  - {fileID: 11400000, guid: dad4b63a421e8164b8a62bad5ab037ed, type: 2}
-  - {fileID: 11400000, guid: 064204e2c61c12e40b045806a4584651, type: 2}
-  - {fileID: 11400000, guid: dad4b63a421e8164b8a62bad5ab037ed, type: 2}
-  equipment:
-    shirt: {fileID: 0}
-    pants: {fileID: 0}
-    hat: {fileID: 0}
-  money: 0
 --- !u!95 &5371094967905422552
 Animator:
   serializedVersion: 4
@@ -973,6 +941,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2769814235886594427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8534129696066062733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b48960643996cf4588053eb888c50b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5371094967905422552}
+  menu: {fileID: 7427642885589079892}
 --- !u!1001 &3668450374063954981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1231,9 +1213,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0923c63cdd3ad8a47b9549aafa4f234a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initItems:
+  - {fileID: 11400000, guid: aca23b1bfdc197e47bc899add36b2c90, type: 2}
+  - {fileID: 11400000, guid: dfce0c20a0449694cb4fe937f501538c, type: 2}
+  - {fileID: 11400000, guid: da614cb3310e2d440bd021091ea11c35, type: 2}
+  initMoney: 666
   rb2d: {fileID: 6060675189045118065}
   animator: {fileID: 6453011894652843135}
-  inventory: {fileID: 6816826907247803531}
+  inventoryUI: {fileID: 2769814235886594427}
   interactionSight: {fileID: 879550454218785696}
   speed: 5
 --- !u!4 &6170124958262344062 stripped

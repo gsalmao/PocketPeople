@@ -2,10 +2,7 @@
     "name": "PocketPeople.Items",
     "rootNamespace": "PocketPeople.Items",
     "references": [
-        "GUID:645b78a5ee5328f43bec394ab9280cc4",
-        "GUID:2520b0ee1de8ece448f678fcf2f8258b",
-        "GUID:61c012554e1c5134ebffef7a50946f3e",
-        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+        "GUID:645b78a5ee5328f43bec394ab9280cc4"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

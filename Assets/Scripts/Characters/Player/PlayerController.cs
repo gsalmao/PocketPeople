@@ -1,14 +1,22 @@
 using PocketPeople.Inputs;
 using PocketPeople.Items;
+using PocketPeople.Items.UI;
+using PocketPeople.UI;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace PocketPeople.Characters.Player
 {
     public class PlayerController : BaseCharacter
     {
+        [SerializeField] private List<BaseItem> initItems;
+        [SerializeField] private int initMoney;
+        
+        [Space]
+
         [SerializeField] private Rigidbody2D rb2d;
         [SerializeField] private Animator animator;
-        [SerializeField] private Inventory inventory;
+        [SerializeField] private InventoryUI inventoryUI;
         [SerializeField] private GameObject interactionSight;
         [SerializeField] private float speed;
 
@@ -22,16 +30,17 @@ namespace PocketPeople.Characters.Player
 
         private void Awake()
         {
+            PlayerInventory.Initialize(initItems, initMoney);
             mainInput = new MainInput();
-            inventory.InitInventory();
-            inventory.OnToggleMenu += TogglePlayerController;
-            Interactable.OnToggleInteraction += TogglePlayerController;
+            inventoryUI.InitInventoryUI();
+            BasicWindow.OnToggleMenu += TogglePlayerController;
+            Interactable.OnToggleInteractions += TogglePlayerController;
         }
 
         private void OnDestroy()
         {
-            inventory.OnToggleMenu -= TogglePlayerController;
-            Interactable.OnToggleInteraction -= TogglePlayerController;
+            BasicWindow.OnToggleMenu -= TogglePlayerController;
+            Interactable.OnToggleInteractions -= TogglePlayerController;
         }
 
         private void OnEnable() => mainInput.Enable();
