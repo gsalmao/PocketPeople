@@ -292,10 +292,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4599278414196162777}
-  playerItemsPool: {fileID: 1223739150007648889}
-  shopItemsPool: {fileID: 6410108116501741548}
-  playerItems: []
-  shopItems: []
+  playerMenu: {fileID: 1223739150007648889}
+  shopMenu: {fileID: 6410108116501741548}
+  availableItems:
+  - {fileID: 11400000, guid: d7a817747c2b04e41a8a6243140033d5, type: 2}
+  - {fileID: 11400000, guid: d7a817747c2b04e41a8a6243140033d5, type: 2}
+  - {fileID: 11400000, guid: d7a817747c2b04e41a8a6243140033d5, type: 2}
+  - {fileID: 11400000, guid: d7a817747c2b04e41a8a6243140033d5, type: 2}
+  - {fileID: 11400000, guid: 064204e2c61c12e40b045806a4584651, type: 2}
 --- !u!1 &8121109677162369978
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +478,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.24495065}
@@ -502,7 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6af07970ab08a3648a94bfd02f447647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopWindow: {fileID: 0}
+  shopWindow: {fileID: 2937308331666105193}
 --- !u!1001 &939557607619343517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -612,7 +616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4787958946397354282, guid: a4330bf1d34224b43b2a3182f393127d, type: 3}
       propertyPath: m_Name
-      value: ShopItems
+      value: ShopMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6034265044846398888, guid: a4330bf1d34224b43b2a3182f393127d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -749,7 +753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4787958946397354282, guid: a4330bf1d34224b43b2a3182f393127d, type: 3}
       propertyPath: m_Name
-      value: PlayerItems
+      value: PlayerMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6034265044846398888, guid: a4330bf1d34224b43b2a3182f393127d, type: 3}
       propertyPath: m_AnchorMax.x

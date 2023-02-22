@@ -11,6 +11,11 @@ namespace PocketPeople.UI
     /// </summary>
     public class BasicWindow : MonoBehaviour
     {
+        /// <summary>
+        /// Bool to check if any screen is already loaded, to prevent multiple windows on screen.
+        /// </summary>
+        public static bool WindowOnScreen;
+
         public static Action<bool> OnToggleMenu = delegate { };
 
         [SerializeField, FoldoutGroup("References")] private Animator animator;
@@ -23,6 +28,7 @@ namespace PocketPeople.UI
         public virtual void ToggleMenu()
         {
             isOpening = !isOpening;
+            WindowOnScreen = isOpening;
             animator.Play(isOpening ? Open : Close);
             OnToggleMenu(isOpening);
         }

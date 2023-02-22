@@ -8,36 +8,46 @@ using UnityEngine;
 
 public class ShopWindow : BasicWindow
 {
-    [SerializeField, FoldoutGroup("References")] private ItemMenuObjectPool playerItemsPool;
-    [SerializeField, FoldoutGroup("References")] private ItemMenuObjectPool shopItemsPool;
+    [SerializeField, FoldoutGroup("References")] private ItemMenuObjectPool playerMenu;
+    [SerializeField, FoldoutGroup("References")] private ItemMenuObjectPool shopMenu;
+    [SerializeField] private List<BaseItem> availableItems;
 
-    [SerializeField] private List<ItemButton> playerItems;
-    [SerializeField] private List<ItemButton> shopItems;
+    private List<ItemButton> shopButtons;
+    private List<ItemButton> playerButtons;
 
     public void InitShopWindow()
     {
-        playerItems = new List<ItemButton>();
-        shopItems = new List<ItemButton>();
+        playerButtons = new List<ItemButton>();
+        shopButtons = new List<ItemButton>();
 
-        playerItemsPool.InitItemMenu();
+        playerMenu.InitItemMenu();
+        shopMenu.InitItemMenu();
 
-        //foreach (BaseItem item in items)
-        //{
-        //    ItemButton newButton = itemMenu.CreateButton().GetComponent<ItemButton>();
-        //    newButton.SetButton(item, ShowDescription, HideDescription);
-        //    newButton.SetOnClick(OnClickItem);
+        foreach (BaseItem item in PlayerInventory.Items)
+        {
+            ItemButton newButton = playerMenu.CreateButton();
+            newButton.SetButton(item, null, null);
+            newButton.SetOnClick(null);
+            playerButtons.Add(newButton);
+        }
 
-        //    itemButtons.Add(newButton);
-
-        //}
+        foreach (BaseItem item in availableItems)
+        {
+            ItemButton newButton = shopMenu.CreateButton();
+            newButton.SetButton(item, null, null);
+            newButton.SetOnClick(null);
+            shopButtons.Add(newButton);
+        }
     }
-
 
     public override void ToggleMenu()
     {
         base.ToggleMenu();
 
-        //foreach (ItemButton itemButton in playerItems)
-        //    itemButton.SetButtonActive(isOpening);
+        foreach (ItemButton itemButton in playerButtons)
+            itemButton.SetButtonActive(isOpening);
+
+        foreach (ItemButton itemButton in shopButtons)
+            itemButton.SetButtonActive(isOpening);
     }
 }
