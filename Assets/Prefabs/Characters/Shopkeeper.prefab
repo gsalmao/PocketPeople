@@ -113,7 +113,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -200}
+  m_AnchoredPosition: {x: -600, y: -200}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3424539130658037906
@@ -294,6 +294,9 @@ MonoBehaviour:
   animator: {fileID: 4599278414196162777}
   playerMenu: {fileID: 1223739150007648889}
   shopMenu: {fileID: 6410108116501741548}
+  price: {fileID: 5753648504457852106}
+  buyColor: {r: 1, g: 0, b: 0, a: 1}
+  sellColor: {r: 0, g: 1, b: 0, a: 1}
   availableItems:
   - {fileID: 11400000, guid: d7a817747c2b04e41a8a6243140033d5, type: 2}
   - {fileID: 11400000, guid: d7a817747c2b04e41a8a6243140033d5, type: 2}
@@ -366,7 +369,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0000
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1b431dea715fcb24bbddc1572d42631c, type: 2}
   m_sharedMaterial: {fileID: 7236563360998256640, guid: 1b431dea715fcb24bbddc1572d42631c, type: 2}

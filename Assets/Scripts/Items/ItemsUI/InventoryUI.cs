@@ -1,5 +1,4 @@
 using Sirenix.OdinInspector;
-using System.Collections.Generic;
 using UnityEngine;
 using PocketPeople.UI;
 
@@ -8,34 +7,26 @@ namespace PocketPeople.Items.UI
     public class InventoryUI : BasicWindow
     {
 
-        [SerializeField, FoldoutGroup("References")] private ItemMenuObjectPool menu;
-
-        private List<ItemButton> itemButtons;
+        [SerializeField, FoldoutGroup("References")] private ItemsMenu inventoryMenu;
         
         public void InitInventoryUI()
         {
-            itemButtons = new List<ItemButton>();
-            menu.InitItemMenu();
+            inventoryMenu.InitItemMenu();
 
             foreach(BaseItem item in PlayerInventory.Items)
-            {
-                ItemButton newButton = menu.CreateButton();
-                newButton.SetButton(item, ShowDescription, HideDescription);
-                newButton.SetOnClick(OnClickItem);
-                itemButtons.Add(newButton);
-            }
+                inventoryMenu.CreateButton(item, ShowDescription, HideDescription, OnClickItem);
         }
 
-        private void OnClickItem(BaseItem item)
+        private void OnClickItem(ItemButton itemButton)
         {
-            Debug.Log($"Clicked on {item.ItemName}");   //TODO: use item, remove from inventory
+            Debug.Log($"Clicked on {itemButton.Item.ItemName}");   //TODO: use item, remove from inventory
         }
 
         public override void ToggleMenu()
         {
             base.ToggleMenu();
 
-            foreach (ItemButton itemButton in itemButtons)
+            foreach (ItemButton itemButton in inventoryMenu.ItemButtons)
                 itemButton.SetButtonActive(isOpening);
         }
 

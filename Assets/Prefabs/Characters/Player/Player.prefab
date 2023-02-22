@@ -1102,7 +1102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5371094967905422552}
-  menu: {fileID: 7427642885589079892}
+  inventoryMenu: {fileID: 7427642885589079892}
 --- !u!1001 &3668450374063954981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1212,7 +1212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4787958946397354282, guid: a4330bf1d34224b43b2a3182f393127d, type: 3}
       propertyPath: m_Name
-      value: ItemsMenu
+      value: InventoryMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6034265044846398888, guid: a4330bf1d34224b43b2a3182f393127d, type: 3}
       propertyPath: m_AnchorMax.x

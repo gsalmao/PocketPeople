@@ -20,35 +20,39 @@ namespace PocketPeople.Items.UI
 
         private BaseItem item;
 
+        public BaseItem Item => item;
+
         protected override void OnEnable()
         {
             base.OnEnable();
             OnPointerEnterCallback += OnPointerEnterItemCallback;
-            OnPointerExitCallback += OnExitHoverItem;
+            OnPointerExitCallback += OnPointerExitItemCallback;
         }
 
         protected override void OnDisable()
         {
             base.OnDisable();
             OnPointerEnterCallback -= OnPointerEnterItemCallback;
-            OnPointerExitCallback -= OnExitHoverItem;
+            OnPointerExitCallback -= OnPointerExitItemCallback;
         }
 
         public void SetButtonActive(bool value) => button.enabled = value;
-
         public void OnPointerEnterItemCallback() => OnHoverItem(item);
+        public void OnPointerExitItemCallback() => OnExitHoverItem();
 
         #region ItemButton
         /// <summary>
-        /// Set the button in any ItemMenu.
+        /// Set the button in the ItemMenu.
         /// </summary>
         /// <param name="item">The item being used.</param>
         /// <param name="OnHoverItem">Callback whenever mouse is over the item.</param>
         /// <param name="OnExitHoverItem">Callback whenever the mouse leaves the item's area.</param>
-        public void SetButton(BaseItem item, Action<BaseItem> OnHoverItem, Action OnExitHoverItem)
+        /// <param name="OnClickItem">Callback whenever the item is clicked.</param>
+        public void SetButton(ItemButton itemButton, BaseItem item, Action<BaseItem> OnHoverItem, Action OnExitHoverItem, Action<ItemButton> OnClickItem)
         {
             this.OnHoverItem = OnHoverItem;
             this.OnExitHoverItem = OnExitHoverItem;
+            button.onClick.AddListener(delegate { OnClickItem(itemButton); });
 
             this.item = item;
             itemName.text = item.ItemName;
@@ -60,19 +64,12 @@ namespace PocketPeople.Items.UI
         {
             OnHoverItem = delegate { };
             OnExitHoverItem = delegate { };
+            button.onClick.RemoveAllListeners();
+
             item = null;
             itemName.text = "";
             itemIcon.color = Color.clear;
         }
-        #endregion
-
-        #region OnClick
-        /// <summary>
-        /// Callback to process the item when clicked, which is injected by whoever is using it.
-        /// </summary>
-        /// <param name="callback"></param>
-        public void SetOnClick(Action<BaseItem> callback) => button.onClick.AddListener(delegate { callback(item); });
-        public void ClearOnClick() => button.onClick.RemoveAllListeners();
         #endregion
     }
 }
