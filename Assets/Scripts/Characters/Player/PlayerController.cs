@@ -9,6 +9,7 @@ namespace PocketPeople.Characters.Player
         [SerializeField] private Rigidbody2D rb2d;
         [SerializeField] private Animator animator;
         [SerializeField] private Inventory inventory;
+        [SerializeField] private GameObject interactionSight;
         [SerializeField] private float speed;
 
         private MainInput mainInput;
@@ -16,14 +17,31 @@ namespace PocketPeople.Characters.Player
         private Vector2 moveDirection;
         private float playerRotation;
 
+        private const string Idle = "Idle";
+        private const string Walk = "Walk";
+
         private void Awake()
         {
             mainInput = new MainInput();
             inventory.InitInventory();
+            inventory.OnToggleMenu += TogglePlayerController;
+        }
+
+        private void OnDestroy()
+        {
+            inventory.OnToggleMenu -= TogglePlayerController;
         }
 
         private void OnEnable() => mainInput.Enable();
         private void OnDisable() => mainInput.Disable();
+
+        private void TogglePlayerController(bool value)
+        {
+            rb2d.velocity = Vector2.zero;
+            interactionSight.gameObject.SetActive(!value);
+            animator.Play(Idle);
+            enabled = !value;
+        }
 
         private void FixedUpdate()
         {
@@ -33,7 +51,7 @@ namespace PocketPeople.Characters.Player
 
         private void Update()
         {
-            string animation = moveDirection.magnitude > 0f ? "Walk" : "Idle";
+            string animation = moveDirection.magnitude > 0f ? Walk : Idle;
             
             if(moveDirection.x != 0f)
                 playerRotation = moveDirection.x > 0f ? 0f : 180f;

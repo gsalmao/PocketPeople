@@ -2,13 +2,16 @@ using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
+using System;
 
 namespace PocketPeople.Items
 {
     public class Inventory : MonoBehaviour
     {
-        [SerializeField, FoldoutGroup("References")] private GameObject interactionSight;
+        public event Action<bool> OnToggleMenu = delegate { };
+
         [SerializeField, FoldoutGroup("References")] private Transform inventoryContent;
+        [SerializeField, FoldoutGroup("References")] private Animator animator;
         [SerializeField, FoldoutGroup("References")] private ItemButton itemButtonPrefab;
 
         [SerializeField] private List<BaseItem> items;
@@ -17,6 +20,10 @@ namespace PocketPeople.Items
 
         private ObjectPool<ItemButton> buttonsPool;
         private List<ItemButton> buttons;
+        private bool isOpening;
+
+        private const string Open = "Open";
+        private const string Close = "Close";
 
         public void InitInventory()
         {
@@ -41,16 +48,11 @@ namespace PocketPeople.Items
             equipment.InitClothes();
         }
 
-        private void OnEnable()
+        public void ToggleInventory()
         {
-            interactionSight.SetActive(false);
+            isOpening = !isOpening;
+            animator.Play(isOpening ? Open : Close);
+            OnToggleMenu(isOpening);
         }
-
-        private void OnDisable()
-        {
-            interactionSight.SetActive(true);
-        }
-
-
     }
 }
