@@ -1901,7 +1901,7 @@ PrefabInstance:
       objectReference: {fileID: 23800000, guid: ebd9a8761ad96d84594a29cdac5a5aa0, type: 2}
     - target: {fileID: 7695099269961993418, guid: 6f1b7584b4c24894dbff30738c754b22, type: 3}
       propertyPath: m_Name
-      value: Shop
+      value: Map_Shop
       objectReference: {fileID: 0}
     - target: {fileID: 7852298849617785428, guid: 6f1b7584b4c24894dbff30738c754b22, type: 3}
       propertyPath: m_NavMeshData

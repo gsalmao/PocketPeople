@@ -13,6 +13,7 @@ namespace PocketPeople.CursorEntities
         public event Action OnPointerDownCallback = delegate{ };
         public event Action OnPointerExitCallback = delegate{ };
         public event Action OnPointerUpCallback = delegate{ };
+        public event Action OnClickCallback = delegate{ };
 
         private bool isActive = true;
 
@@ -36,7 +37,8 @@ namespace PocketPeople.CursorEntities
 
         private bool pointerOverThis = false;
 
-        private void OnDisable() => CursorController.SetCursor(CursorType.Idle);
+        protected virtual void OnEnable() { }
+        protected virtual void OnDisable() => CursorController.SetCursor(CursorType.Idle);
 
         public void OnPointerEnter(PointerEventData eventData)
         {
@@ -75,7 +77,10 @@ namespace PocketPeople.CursorEntities
                 return;
 
             if (pointerOverThis)
+            {
                 CursorController.SetCursor(CursorType.Hover);
+                OnClickCallback();
+            }
             else
                 CursorController.SetCursor(CursorType.Idle);
             OnPointerUpCallback();

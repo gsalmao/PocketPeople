@@ -10,16 +10,16 @@ namespace PocketPeople.Items
     {
         public event Action<bool> OnToggleMenu = delegate { };
 
-        [SerializeField, FoldoutGroup("References")] private Transform inventoryContent;
+        
         [SerializeField, FoldoutGroup("References")] private Animator animator;
-        [SerializeField, FoldoutGroup("References")] private ItemButton itemButtonPrefab;
-
+        [SerializeField, FoldoutGroup("References")] private Transform itemButtonPrefab;
+        [SerializeField, FoldoutGroup("References")] private ItemMenu itemMenu;
         [SerializeField] private List<BaseItem> items;
         [SerializeField] private Equipment equipment;
         [SerializeField] private int money;
 
-        private ObjectPool<ItemButton> buttonsPool;
-        private List<ItemButton> buttons;
+        
+        private List<ItemButton> itemButtons;
         private bool isOpening;
 
         private const string Open = "Open";
@@ -27,30 +27,34 @@ namespace PocketPeople.Items
 
         public void InitInventory()
         {
-            //Object Pooling
-            buttonsPool = new ObjectPool<ItemButton>(
-            () => Instantiate(itemButtonPrefab),
-            button => button.gameObject.SetActive(true),
-            button => button.gameObject.SetActive(false),
-            button => Destroy(button), false, 30, 50);
-
-            buttons = new List<ItemButton>();
+            itemButtons = new List<ItemButton>();
+            itemMenu.InitItemMenu(itemButtonPrefab);
 
             foreach(BaseItem item in items)
             {
-                ItemButton newButton = buttonsPool.Get();
-                newButton.transform.SetParent(inventoryContent);
-                newButton.transform.localScale = Vector3.one;
+                ItemButton newButton = itemMenu.CreateButton().GetComponent<ItemButton>();
                 newButton.SetButton(item);
-                buttons.Add(newButton);
+                newButton.SetOnClick(OnClickItem);
+
+                itemButtons.Add(newButton);
+
             }
 
             equipment.InitClothes();
         }
 
+        private void OnClickItem(BaseItem item)
+        {
+            Debug.Log($"Clicked on {item.ItemName}");   //TODO: use item, remove from inventory
+        }
+
         public void ToggleInventory()
         {
             isOpening = !isOpening;
+
+            foreach (ItemButton itemButton in itemButtons)
+                itemButton.SetButtonActive(isOpening);
+
             animator.Play(isOpening ? Open : Close);
             OnToggleMenu(isOpening);
         }

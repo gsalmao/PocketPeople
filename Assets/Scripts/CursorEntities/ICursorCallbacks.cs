@@ -11,5 +11,6 @@ namespace PocketPeople.CursorEntities
         event Action OnPointerDownCallback;
         event Action OnPointerExitCallback;
         event Action OnPointerUpCallback;
+        event Action OnClickCallback;
     }
 }

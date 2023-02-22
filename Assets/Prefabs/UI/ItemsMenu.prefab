@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 4547319404172877763}
   - component: {fileID: 7126232670801291350}
   - component: {fileID: 9034846034018773429}
+  - component: {fileID: 6196036043826105201}
   m_Layer: 0
   m_Name: ItemsMenu
   m_TagString: Untagged
@@ -392,6 +393,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6196036043826105201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787958946397354282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea41eacb135a1024ea914892968ee6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryContent: {fileID: 3697504842052371178}
 --- !u!1 &5171862242409723914
 GameObject:
   m_ObjectHideFlags: 0

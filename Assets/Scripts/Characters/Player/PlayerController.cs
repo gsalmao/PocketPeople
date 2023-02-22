@@ -25,11 +25,13 @@ namespace PocketPeople.Characters.Player
             mainInput = new MainInput();
             inventory.InitInventory();
             inventory.OnToggleMenu += TogglePlayerController;
+            Interactable.OnToggleInteraction += TogglePlayerController;
         }
 
         private void OnDestroy()
         {
             inventory.OnToggleMenu -= TogglePlayerController;
+            Interactable.OnToggleInteraction -= TogglePlayerController;
         }
 
         private void OnEnable() => mainInput.Enable();
