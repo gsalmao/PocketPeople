@@ -2,7 +2,9 @@
     "name": "PocketPeople.Application",
     "rootNamespace": "PocketPeople.Application",
     "references": [
-        "GUID:61c012554e1c5134ebffef7a50946f3e"
+        "GUID:61c012554e1c5134ebffef7a50946f3e",
+        "GUID:58384fb66d6b93d4bae449a2b2ef4f60",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -206,7 +206,7 @@ MonoBehaviour:
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"MaxIdleTime":{"_value":5.0,"_name":"MaxIdleTime","_id":"9c18adee-fb85-43fe-b844-233efea7eb8e","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"ScareDistance":{"_value":2.0,"_name":"ScareDistance","_id":"8bb6094c-56b9-4df0-b079-032726637462","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"WalkSpeed":{"_value":1.5,"_name":"WalkSpeed","_id":"51a2b296-26e1-4c82-bac5-2805c442a51a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"FlyTime":{"_value":4.0,"_name":"FlyTime","_id":"e0795750-f450-4b66-8d93-20045bdb12c6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"FlyTime":{"_value":3.3,"_name":"FlyTime","_id":"e0795750-f450-4b66-8d93-20045bdb12c6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"ReturnWaitTime":{"_value":8.0,"_name":"ReturnWaitTime","_id":"1fc37f1b-88eb-48f3-8984-b9c8866baa14","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences:
@@ -264,7 +264,7 @@ MonoBehaviour:
   - _json: '{"_value":1.5,"_name":"WalkSpeed","_id":"51a2b296-26e1-4c82-bac5-2805c442a51a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
-  - _json: '{"_value":4.0,"_name":"FlyTime","_id":"e0795750-f450-4b66-8d93-20045bdb12c6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  - _json: '{"_value":3.3,"_name":"FlyTime","_id":"e0795750-f450-4b66-8d93-20045bdb12c6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
   - _json: '{"_value":8.0,"_name":"ReturnWaitTime","_id":"1fc37f1b-88eb-48f3-8984-b9c8866baa14","$type":"NodeCanvas.Framework.Variable`1[[System.Single,

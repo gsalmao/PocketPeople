@@ -15,9 +15,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Fire",
+                    "name": "Esc",
                     "type": "Button",
-                    "id": "a8b32394-adc5-4633-a656-4fecb9fc5b26",
+                    "id": "ffb35c8e-d539-49dc-81eb-e2901a21938c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -82,12 +82,12 @@
                 },
                 {
                     "name": "",
-                    "id": "c1883cc7-7a4f-42bd-93e6-766698047dc6",
-                    "path": "<Mouse>/leftButton",
+                    "id": "e4dcde85-b1f0-47ac-9308-5ae04d08c6f1",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire",
+                    "action": "Esc",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

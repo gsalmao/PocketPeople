@@ -1,4 +1,5 @@
 using PocketPeople.Inputs;
+using PocketPeople.Interactables;
 using PocketPeople.Items;
 using PocketPeople.Items.UI;
 using PocketPeople.UI;

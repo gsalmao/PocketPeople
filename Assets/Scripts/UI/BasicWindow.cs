@@ -1,13 +1,11 @@
 using Sirenix.OdinInspector;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace PocketPeople.UI
 {
     /// <summary>
-    /// Basic window to be used whenever a new UI is shown on screen (inventory, shop's windows, etc).
+    /// Basic window to be used whenever a new UI is shown on screen (inventory, shop's windows, dialogues).
     /// </summary>
     public class BasicWindow : MonoBehaviour
     {
@@ -18,14 +16,14 @@ namespace PocketPeople.UI
 
         public static Action<bool> OnToggleMenu = delegate { };
 
-        [SerializeField, FoldoutGroup("References")] private Animator animator;
+        [SerializeField, FoldoutGroup("References")] protected Animator animator;
 
         protected bool isOpening;
 
         protected const string Open = "Open";
         protected const string Close = "Close";
 
-        public virtual void ToggleMenu()
+        public virtual void ToggleWindow()
         {
             isOpening = !isOpening;
             WindowOnScreen = isOpening;

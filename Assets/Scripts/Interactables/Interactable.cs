@@ -1,26 +1,29 @@
 using PocketPeople.CursorEntities;
 using System;
 
-/// <summary>
-/// Interactable scene objects, such as npcs, buttons and levers.
-/// </summary>
-public class Interactable : CursorModifier
+namespace PocketPeople.Interactables
 {
-    public static Action<bool> OnToggleInteractions = delegate { };
-
-    protected virtual void Awake() => IsActive = false;
-
-    protected override void OnEnable()
+    /// <summary>
+    /// Interactable scene objects, such as npcs, signs and shopkeepers.
+    /// </summary>
+    public class Interactable : CursorModifier
     {
-        base.OnEnable();
-        OnClickCallback += Interact;
-    }
+        public static Action<bool> OnToggleInteractions = delegate { };
 
-    protected override void OnDisable()
-    {
-        base.OnDisable();
-        OnClickCallback -= Interact;
-    }
+        protected virtual void Awake() => IsActive = false;
 
-    protected virtual void Interact() { }
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            OnClickCallback += Interact;
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            OnClickCallback -= Interact;
+        }
+
+        protected virtual void Interact() { }
+    }
 }

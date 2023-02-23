@@ -567,7 +567,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2769814235886594427}
         m_TargetAssemblyTypeName: PocketPeople.Items.UI.InventoryUI, PocketPeople.Items.UI
-        m_MethodName: ToggleMenu
+        m_MethodName: ToggleWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1152,6 +1152,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5942587846722613925}
     m_Modifications:
+    - target: {fileID: 1388035105812211446, guid: a4330bf1d34224b43b2a3182f393127d, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1393435426973199673, guid: a4330bf1d34224b43b2a3182f393127d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

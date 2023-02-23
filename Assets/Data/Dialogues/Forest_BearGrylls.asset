@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c60a398baac8e274bba7dedb4b42a0e3, type: 3}
+  m_Name: Forest_BearGrylls
+  m_EditorClassIdentifier: 
+  messages:
+  - speaker: Bear Grylls
+    sentence: It's been 2 months since I've started rejecting society.
+  - speaker: Bear Grylls
+    sentence: 2 months living in the woods. No wifi.
+  - speaker: Bear Grylls
+    sentence: I'm only eating worms and centipedes. They have a lot of protein.

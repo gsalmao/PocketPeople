@@ -39,9 +39,9 @@ namespace PocketPeople.Inputs
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Fire"",
+                    ""name"": ""Esc"",
                     ""type"": ""Button"",
-                    ""id"": ""a8b32394-adc5-4633-a656-4fecb9fc5b26"",
+                    ""id"": ""ffb35c8e-d539-49dc-81eb-e2901a21938c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -106,12 +106,12 @@ namespace PocketPeople.Inputs
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c1883cc7-7a4f-42bd-93e6-766698047dc6"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""id"": ""e4dcde85-b1f0-47ac-9308-5ae04d08c6f1"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Fire"",
+                    ""action"": ""Esc"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -123,7 +123,7 @@ namespace PocketPeople.Inputs
             // Gameplay
             m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
             m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
-            m_Gameplay_Fire = m_Gameplay.FindAction("Fire", throwIfNotFound: true);
+            m_Gameplay_Esc = m_Gameplay.FindAction("Esc", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -184,13 +184,13 @@ namespace PocketPeople.Inputs
         private readonly InputActionMap m_Gameplay;
         private IGameplayActions m_GameplayActionsCallbackInterface;
         private readonly InputAction m_Gameplay_Move;
-        private readonly InputAction m_Gameplay_Fire;
+        private readonly InputAction m_Gameplay_Esc;
         public struct GameplayActions
         {
             private @MainInput m_Wrapper;
             public GameplayActions(@MainInput wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_Gameplay_Move;
-            public InputAction @Fire => m_Wrapper.m_Gameplay_Fire;
+            public InputAction @Esc => m_Wrapper.m_Gameplay_Esc;
             public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -203,9 +203,9 @@ namespace PocketPeople.Inputs
                     @Move.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
                     @Move.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
                     @Move.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
-                    @Fire.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFire;
-                    @Fire.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFire;
-                    @Fire.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFire;
+                    @Esc.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnEsc;
+                    @Esc.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnEsc;
+                    @Esc.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnEsc;
                 }
                 m_Wrapper.m_GameplayActionsCallbackInterface = instance;
                 if (instance != null)
@@ -213,9 +213,9 @@ namespace PocketPeople.Inputs
                     @Move.started += instance.OnMove;
                     @Move.performed += instance.OnMove;
                     @Move.canceled += instance.OnMove;
-                    @Fire.started += instance.OnFire;
-                    @Fire.performed += instance.OnFire;
-                    @Fire.canceled += instance.OnFire;
+                    @Esc.started += instance.OnEsc;
+                    @Esc.performed += instance.OnEsc;
+                    @Esc.canceled += instance.OnEsc;
                 }
             }
         }
@@ -223,7 +223,7 @@ namespace PocketPeople.Inputs
         public interface IGameplayActions
         {
             void OnMove(InputAction.CallbackContext context);
-            void OnFire(InputAction.CallbackContext context);
+            void OnEsc(InputAction.CallbackContext context);
         }
     }
 }

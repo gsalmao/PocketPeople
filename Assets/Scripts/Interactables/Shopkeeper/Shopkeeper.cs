@@ -1,19 +1,22 @@
 using UnityEngine;
 
-public class Shopkeeper : Interactable
+namespace PocketPeople.Interactables.Shopkeeper
 {
-    [SerializeField] private ShopWindow shopWindow;
-
-    protected override void Awake()
+    public class Shopkeeper : Interactable
     {
-        base.Awake();
-        shopWindow.InitShopWindow();
-    }
+        [SerializeField] private ShopWindow shopWindow;
 
-    protected override void Interact()
-    {
-        base.Interact();
-        OnToggleInteractions(true);
-        shopWindow.ToggleMenu();
+        protected override void Awake()
+        {
+            base.Awake();
+            shopWindow.InitShopWindow();
+        }
+
+        protected override void Interact()
+        {
+            base.Interact();
+            OnToggleInteractions(true);
+            shopWindow.ToggleWindow();
+        }
     }
 }

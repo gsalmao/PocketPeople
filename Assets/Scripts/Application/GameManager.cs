@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PocketPeople.Application
+namespace PocketPeople.ApplicationManager
 {
     /// <summary>
     /// Initializes the application.

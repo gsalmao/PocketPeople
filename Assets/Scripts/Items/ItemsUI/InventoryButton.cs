@@ -11,7 +11,7 @@ namespace PocketPeople.Items.UI
         public void OpenInventory()
         {
             if (!BasicWindow.WindowOnScreen)
-                inventoryUI.ToggleMenu();
+                inventoryUI.ToggleWindow();
         }
     }
 }

@@ -853,7 +853,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2937308331666105193}
         m_TargetAssemblyTypeName: ShopWindow, PocketPeople.Interactables.Shopkeeper
-        m_MethodName: ToggleMenu
+        m_MethodName: ToggleWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

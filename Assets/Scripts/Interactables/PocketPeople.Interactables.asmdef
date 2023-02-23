@@ -1,8 +1,11 @@
 {
     "name": "PocketPeople.Interactables",
-    "rootNamespace": "",
+    "rootNamespace": "PocketPeople.Interactables",
     "references": [
-        "GUID:2520b0ee1de8ece448f678fcf2f8258b"
+        "GUID:d055970d43ebe2d449fe0b1d2fd48b63",
+        "GUID:2520b0ee1de8ece448f678fcf2f8258b",
+        "GUID:654a4da7147d2c24088be6416c70326f",
+        "GUID:5faba8e5996223341908a2b412aea5dc"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

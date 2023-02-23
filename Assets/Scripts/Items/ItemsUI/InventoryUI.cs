@@ -36,9 +36,9 @@ namespace PocketPeople.Items.UI
             Debug.Log($"Clicked on {itemButton.Item.ItemName}");   //TODO: use item, remove from inventory
         }
 
-        public override void ToggleMenu()
+        public override void ToggleWindow()
         {
-            base.ToggleMenu();
+            base.ToggleWindow();
 
             foreach (ItemButton itemButton in inventoryMenu.ItemButtons)
                 itemButton.SetButtonActive(isOpening);
