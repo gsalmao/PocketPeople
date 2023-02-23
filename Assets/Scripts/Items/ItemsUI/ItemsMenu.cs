@@ -19,7 +19,7 @@ namespace PocketPeople.Items.UI
         private List<ItemButton> itemButtons;
 
 
-        public void InitItemMenu()
+        public void Init()
         {
             buttonsPool = new ObjectPool<ItemButton>(
             () => Instantiate(itemButtonPrefab),
@@ -41,11 +41,29 @@ namespace PocketPeople.Items.UI
             return newButton;
         }
 
+        /// <summary>
+        /// Directly deletes an ItemButton.
+        /// </summary>
         public void DeleteButton(ItemButton itemButton)
         {
             itemButtons.Remove(itemButton);
             itemButton.ClearButton();
             buttonsPool.Release(itemButton);
+        }
+
+        /// <summary>
+        /// Delete one of the itemButtons with given item.
+        /// </summary>
+        public void DeleteButton(BaseItem item)
+        {
+            foreach(ItemButton itemButton in itemButtons)
+            {
+                if (itemButton.Item != item)
+                    continue;
+
+                DeleteButton(itemButton);
+                break;
+            }
         }
 
     }

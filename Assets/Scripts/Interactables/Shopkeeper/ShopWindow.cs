@@ -5,37 +5,30 @@ using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.Xml.Serialization;
-using System.IO;
 
 public class ShopWindow : BasicWindow
 {
-    [SerializeField] private string shopKeeperName;
     [SerializeField, FoldoutGroup("References")] private ItemsMenu playerMenu;
     [SerializeField, FoldoutGroup("References")] private ItemsMenu shopMenu;
     [SerializeField, FoldoutGroup("References")] private TextMeshProUGUI price;
+    [SerializeField, FoldoutGroup("References")] private ItemDescription itemDescription;
 
     [SerializeField, FoldoutGroup("Shopkeeper Settings")] private Color buyColor;
     [SerializeField, FoldoutGroup("Shopkeeper Settings")] private Color sellColor;
     [SerializeField] private List<BaseItem> availableItems;
 
-    private void Awake()
-    {
-        
-    }
-
     public void InitShopWindow()
     {
-        ShowPlayerMoney();
+        OnUnhover();
 
-        playerMenu.InitItemMenu();
-        shopMenu.InitItemMenu();
+        playerMenu.Init();
+        shopMenu.Init();
 
         foreach (BaseItem item in PlayerInventory.Items)
-            playerMenu.CreateButton(item, OnSellHover, ShowPlayerMoney, OnSell);
+            playerMenu.CreateButton(item, OnSellHover, OnUnhover, OnSell);
 
         foreach (BaseItem item in availableItems)
-            shopMenu.CreateButton(item, OnBuyHover, ShowPlayerMoney, OnBuy);
+            shopMenu.CreateButton(item, OnBuyHover, OnUnhover, OnBuy);
     }
 
     public override void ToggleMenu()
@@ -49,15 +42,18 @@ public class ShopWindow : BasicWindow
             itemButton.SetButtonActive(isOpening);
     }
 
-    private void ShowPlayerMoney()
+    private void OnUnhover()
     {
+        itemDescription.HideDescription();
         price.color = Color.white;
         price.text = PlayerInventory.Money.ToString();
     }
 
+
     #region Sell Methods
     private void OnSellHover(BaseItem item)
     {
+        itemDescription.ShowDescription(item);
         price.color = sellColor;
         price.text = (PlayerInventory.Money + item.SellPrice).ToString();
     }
@@ -67,7 +63,7 @@ public class ShopWindow : BasicWindow
         PlayerInventory.TakeItem(itemButton.Item);
         PlayerInventory.ReceiveMoney(itemButton.Item.SellPrice);
 
-        shopMenu.CreateButton(itemButton.Item, OnBuyHover, ShowPlayerMoney, OnBuy);
+        shopMenu.CreateButton(itemButton.Item, OnBuyHover, OnUnhover, OnBuy);
         playerMenu.DeleteButton(itemButton);
 
     }
@@ -77,6 +73,7 @@ public class ShopWindow : BasicWindow
     #region Buy Methods
     private void OnBuyHover(BaseItem item)
     {
+        itemDescription.ShowDescription(item);
         price.color = buyColor;
         price.text = item.BuyPrice > PlayerInventory.Money ? "~" : (PlayerInventory.Money - item.BuyPrice).ToString();
     }
@@ -89,7 +86,7 @@ public class ShopWindow : BasicWindow
         PlayerInventory.ReceiveItem(itemButton.Item);
         PlayerInventory.TakeMoney(itemButton.Item.BuyPrice);
 
-        playerMenu.CreateButton(itemButton.Item, OnSellHover, ShowPlayerMoney, OnSell);
+        playerMenu.CreateButton(itemButton.Item, OnSellHover, OnUnhover, OnSell);
         shopMenu.DeleteButton(itemButton);
     }
 

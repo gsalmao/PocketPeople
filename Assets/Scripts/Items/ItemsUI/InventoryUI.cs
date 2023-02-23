@@ -6,15 +6,24 @@ namespace PocketPeople.Items.UI
 {
     public class InventoryUI : BasicWindow
     {
-
         [SerializeField, FoldoutGroup("References")] private ItemsMenu inventoryMenu;
-        
+        [SerializeField, FoldoutGroup("References")] private ItemDescription itemDescription;
+
         public void InitInventoryUI()
         {
-            inventoryMenu.InitItemMenu();
+            inventoryMenu.Init();
 
             foreach(BaseItem item in PlayerInventory.Items)
-                inventoryMenu.CreateButton(item, ShowDescription, HideDescription, OnClickItem);
+                inventoryMenu.CreateButton(item, itemDescription.ShowDescription, itemDescription.HideDescription, OnClickItem);
+
+            PlayerInventory.OnReceiveItem += CreateNewItemButton;
+            PlayerInventory.OnTakeItem += DeleteItemButton;
+        }
+
+        private void OnDestroy()
+        {
+            PlayerInventory.OnReceiveItem -= CreateNewItemButton;
+            PlayerInventory.OnTakeItem -= DeleteItemButton;
         }
 
         private void OnClickItem(ItemButton itemButton)
@@ -30,7 +39,12 @@ namespace PocketPeople.Items.UI
                 itemButton.SetButtonActive(isOpening);
         }
 
-        private void ShowDescription(BaseItem item) => InventoryDescription.ShowDescription(item);
-        private void HideDescription() => InventoryDescription.ShowDescription(null);
+        private void CreateNewItemButton(BaseItem newItem)
+        {
+            inventoryMenu.CreateButton(newItem, itemDescription.ShowDescription, itemDescription.HideDescription, OnClickItem);
+        }
+
+        private void DeleteItemButton(BaseItem itemTaken) => inventoryMenu.DeleteButton(itemTaken);
+        
     }
 }

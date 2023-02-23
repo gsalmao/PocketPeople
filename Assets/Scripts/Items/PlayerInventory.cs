@@ -9,7 +9,9 @@ namespace PocketPeople.Items
     public static class PlayerInventory
     {
         public static event Action OnChangeMoney = delegate { };
-        public static event Action OnChangeInventory = delegate { };
+
+        public static event Action<BaseItem> OnReceiveItem = delegate { };
+        public static event Action<BaseItem> OnTakeItem = delegate { };
 
         public static List<BaseItem> Items { get; private set; }
         public static int Money { get; private set; }
@@ -31,13 +33,13 @@ namespace PocketPeople.Items
         public static void ReceiveItem(BaseItem item)
         {
             Items.Add(item);
-            OnChangeInventory();
+            OnReceiveItem(item);
         }
 
         public static void TakeItem(BaseItem item)
         {
             Items.Remove(item);
-            OnChangeInventory();
+            OnTakeItem(item);
         }
         #endregion
 
