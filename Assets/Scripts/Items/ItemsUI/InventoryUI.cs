@@ -1,6 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 using PocketPeople.UI;
+using TMPro;
 
 namespace PocketPeople.Items.UI
 {
@@ -8,6 +9,7 @@ namespace PocketPeople.Items.UI
     {
         [SerializeField, FoldoutGroup("References")] private ItemsMenu inventoryMenu;
         [SerializeField, FoldoutGroup("References")] private ItemDescription itemDescription;
+        [SerializeField, FoldoutGroup("References")] private TextMeshProUGUI playerMoney;
 
         public void InitInventoryUI()
         {
@@ -16,6 +18,9 @@ namespace PocketPeople.Items.UI
             foreach(BaseItem item in PlayerInventory.Items)
                 inventoryMenu.CreateButton(item, itemDescription.ShowDescription, itemDescription.HideDescription, OnClickItem);
 
+            playerMoney.text = PlayerInventory.Money.ToString();
+
+            PlayerInventory.OnChangeMoney += UpdateMoneyUI;
             PlayerInventory.OnReceiveItem += CreateNewItemButton;
             PlayerInventory.OnTakeItem += DeleteItemButton;
         }
@@ -45,6 +50,7 @@ namespace PocketPeople.Items.UI
         }
 
         private void DeleteItemButton(BaseItem itemTaken) => inventoryMenu.DeleteButton(itemTaken);
-        
+
+        private void UpdateMoneyUI() => playerMoney.text = PlayerInventory.Money.ToString();
     }
 }

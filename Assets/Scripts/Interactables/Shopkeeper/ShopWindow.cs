@@ -10,7 +10,8 @@ public class ShopWindow : BasicWindow
 {
     [SerializeField, FoldoutGroup("References")] private ItemsMenu playerMenu;
     [SerializeField, FoldoutGroup("References")] private ItemsMenu shopMenu;
-    [SerializeField, FoldoutGroup("References")] private TextMeshProUGUI price;
+    [SerializeField, FoldoutGroup("References")] private TextMeshProUGUI playerMoney;
+    [SerializeField, FoldoutGroup("References")] private TextMeshProUGUI itemPrice;
     [SerializeField, FoldoutGroup("References")] private ItemDescription itemDescription;
 
     [SerializeField, FoldoutGroup("Shopkeeper Settings")] private Color buyColor;
@@ -24,9 +25,6 @@ public class ShopWindow : BasicWindow
         playerMenu.Init();
         shopMenu.Init();
 
-        foreach (BaseItem item in PlayerInventory.Items)
-            playerMenu.CreateButton(item, OnSellHover, OnUnhover, OnSell);
-
         foreach (BaseItem item in availableItems)
             shopMenu.CreateButton(item, OnBuyHover, OnUnhover, OnBuy);
     }
@@ -34,6 +32,15 @@ public class ShopWindow : BasicWindow
     public override void ToggleMenu()
     {
         base.ToggleMenu();
+
+        if (isOpening)
+        {
+            
+            foreach (BaseItem item in PlayerInventory.Items)
+                playerMenu.CreateButton(item, OnSellHover, OnUnhover, OnSell);
+        }
+        else
+            playerMenu.ClearMenu();
 
         foreach (ItemButton itemButton in playerMenu.ItemButtons)
             itemButton.SetButtonActive(isOpening);
@@ -45,8 +52,9 @@ public class ShopWindow : BasicWindow
     private void OnUnhover()
     {
         itemDescription.HideDescription();
-        price.color = Color.white;
-        price.text = PlayerInventory.Money.ToString();
+        playerMoney.color = Color.white;
+        itemPrice.text = "";
+        playerMoney.text = PlayerInventory.Money.ToString();
     }
 
 
@@ -54,18 +62,22 @@ public class ShopWindow : BasicWindow
     private void OnSellHover(BaseItem item)
     {
         itemDescription.ShowDescription(item);
-        price.color = sellColor;
-        price.text = (PlayerInventory.Money + item.SellPrice).ToString();
+        playerMoney.color = sellColor;
+        playerMoney.text = (PlayerInventory.Money + item.SellPrice).ToString();
+        itemPrice.color = sellColor;
+        itemPrice.text = $"+{item.SellPrice}";
     }
 
     private void OnSell(ItemButton itemButton)
     {
-        PlayerInventory.TakeItem(itemButton.Item);
+        if (itemButton.Item == null) return;
+
         PlayerInventory.ReceiveMoney(itemButton.Item.SellPrice);
+        PlayerInventory.TakeItem(itemButton.Item);
 
         shopMenu.CreateButton(itemButton.Item, OnBuyHover, OnUnhover, OnBuy);
         playerMenu.DeleteButton(itemButton);
-
+        OnUnhover();
     }
     #endregion
 
@@ -74,8 +86,10 @@ public class ShopWindow : BasicWindow
     private void OnBuyHover(BaseItem item)
     {
         itemDescription.ShowDescription(item);
-        price.color = buyColor;
-        price.text = item.BuyPrice > PlayerInventory.Money ? "~" : (PlayerInventory.Money - item.BuyPrice).ToString();
+        playerMoney.color = buyColor;
+        playerMoney.text = item.BuyPrice > PlayerInventory.Money ? "~" : (PlayerInventory.Money - item.BuyPrice).ToString();
+        itemPrice.color = buyColor;
+        itemPrice.text = $"-{item.BuyPrice}";
     }
 
     private void OnBuy(ItemButton itemButton)
@@ -88,6 +102,7 @@ public class ShopWindow : BasicWindow
 
         playerMenu.CreateButton(itemButton.Item, OnSellHover, OnUnhover, OnSell);
         shopMenu.DeleteButton(itemButton);
+        OnUnhover();
     }
 
     #endregion

@@ -47,6 +47,7 @@ namespace PocketPeople.Items
         public static void ReceiveMoney(int amount)
         {
             Money += amount;
+            OnChangeMoney();
         }
 
         public static void TakeMoney(int amount)
@@ -55,6 +56,7 @@ namespace PocketPeople.Items
                 Money = 0;
             else
                 Money -= amount;
+            OnChangeMoney();
         }
         #endregion
 

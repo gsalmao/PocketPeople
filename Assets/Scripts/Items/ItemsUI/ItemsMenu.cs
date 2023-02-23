@@ -29,6 +29,13 @@ namespace PocketPeople.Items.UI
             itemButtons = new List<ItemButton>();
         }
 
+        public void ClearMenu()
+        {
+            foreach (ItemButton itemButton in itemButtons)
+                buttonsPool.Release(itemButton);
+            itemButtons.Clear();
+        }
+
         public ItemButton CreateButton(BaseItem item, Action<BaseItem> onHoverItem, Action onExitHoverItem, Action<ItemButton> onClick)
         {
             ItemButton newButton = buttonsPool.Get();
@@ -46,9 +53,9 @@ namespace PocketPeople.Items.UI
         /// </summary>
         public void DeleteButton(ItemButton itemButton)
         {
-            itemButtons.Remove(itemButton);
             itemButton.ClearButton();
             buttonsPool.Release(itemButton);
+            itemButtons.Remove(itemButton);
         }
 
         /// <summary>
