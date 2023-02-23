@@ -7,8 +7,13 @@ using UnityEngine;
 
 namespace PocketPeople.Characters.Player
 {
+    /// <summary>
+    /// Controls the player and sets the inventory init Items.
+    /// </summary>
     public class PlayerController : BaseCharacter
     {
+        public static Transform PlayerBody { get; private set; }
+
         [SerializeField] private List<BaseItem> initItems;
         [SerializeField] private int initMoney;
         
@@ -30,6 +35,7 @@ namespace PocketPeople.Characters.Player
 
         private void Awake()
         {
+            PlayerBody = animator.transform;
             PlayerInventory.Initialize(initItems, initMoney);
             mainInput = new MainInput();
             inventoryUI.InitInventoryUI();

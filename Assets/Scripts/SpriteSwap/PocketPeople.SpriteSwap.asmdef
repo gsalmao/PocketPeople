@@ -1,6 +1,6 @@
 {
-    "name": "PocketPeople.SpriteSwapper",
-    "rootNamespace": "PocketPeople.SpriteSwapper",
+    "name": "PocketPeople.SpriteSwap",
+    "rootNamespace": "PocketPeople.SpriteSwap",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

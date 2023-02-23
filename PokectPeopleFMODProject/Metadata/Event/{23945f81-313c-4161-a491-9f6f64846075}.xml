@@ -70,6 +70,9 @@
 		<relationship name="modules">
 			<destination>{09be7b3d-d6bd-46f2-bacd-2283c019336e}</destination>
 		</relationship>
+		<relationship name="markers">
+			<destination>{4475ae8b-833e-4f46-9d3d-9a57fd049473}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{6370bfe2-b3e3-4b32-a759-098017babe24}">
 		<relationship name="effectChain">
@@ -100,6 +103,9 @@
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{4cf38356-126f-4c66-9300-c5e2fa39f201}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{ba8301e4-081b-405f-ba40-f8781a80611b}</destination>
 		</relationship>
@@ -110,6 +116,20 @@
 			<destination>{6370bfe2-b3e3-4b32-a759-098017babe24}</destination>
 		</relationship>
 	</object>
+	<object class="LoopRegion" id="{4475ae8b-833e-4f46-9d3d-9a57fd049473}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="length">
+			<value>202.00489795918367</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{d4e97817-56e5-412f-9f22-a961ee81b540}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{7e2a2c4a-f532-4dd2-b656-dc97e4ebb09f}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{9e34d31a-9019-46cc-8e66-12c1c3d9e0fb}">
 		<relationship name="effects">
 			<destination>{948932d0-4b71-49ad-a44d-6c2f82d88593}</destination>
@@ -117,6 +137,23 @@
 	</object>
 	<object class="MixerBusPanner" id="{3d28d1cd-e56e-4063-a8a8-c4b395f96d3c}" />
 	<object class="MixerBusFader" id="{0defcfbf-9c21-46ee-ae75-d3dd9289906e}" />
+	<object class="ADSRModulator" id="{4cf38356-126f-4c66-9300-c5e2fa39f201}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>0</value>
+		</property>
+		<property name="releaseTime">
+			<value>9000</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{ba8301e4-081b-405f-ba40-f8781a80611b}">
 		<relationship name="effects">
 			<destination>{749c8cb3-ba1d-41ac-9aff-8d25d7f29a86}</destination>

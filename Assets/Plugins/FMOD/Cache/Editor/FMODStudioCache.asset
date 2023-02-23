@@ -49,7 +49,7 @@ MonoBehaviour:
   - {fileID: 2147169470417209627}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -96,7 +96,7 @@ MonoBehaviour:
   Path: PokectPeopleFMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638126901504684788
+  lastModified: 638127172174854598
   FileSizes:
   - Name: Desktop
     Value: 1068
@@ -129,7 +129,7 @@ MonoBehaviour:
   - {fileID: 2147169470417209627}
   StringsBanks:
   - {fileID: -3406460586494488076}
-  cacheTime: 638126901504684788
+  cacheTime: 638127172174854598
   cacheVersion: 131601
 --- !u!114 &105420899243406393
 MonoBehaviour:
@@ -200,10 +200,10 @@ MonoBehaviour:
   Path: PokectPeopleFMODProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638126901504664790
+  lastModified: 638127172174834587
   FileSizes:
   - Name: Desktop
-    Value: 7010816
+    Value: 7011616
   Exists: 1
 --- !u!114 &3669810717277948381
 MonoBehaviour:
@@ -227,7 +227,7 @@ MonoBehaviour:
   - {fileID: 2147169470417209627}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
