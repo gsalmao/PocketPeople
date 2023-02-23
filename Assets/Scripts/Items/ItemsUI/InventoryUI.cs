@@ -8,7 +8,7 @@ namespace PocketPeople.Items.UI
     public class InventoryUI : BasicWindow
     {
         [SerializeField, FoldoutGroup("References")] private ItemsMenu inventoryMenu;
-        [SerializeField, FoldoutGroup("References")] private ItemDescription itemDescription;
+        [SerializeField, FoldoutGroup("References")] private ItemDescription description;
         [SerializeField, FoldoutGroup("References")] private TextMeshProUGUI playerMoney;
 
         public void InitInventoryUI()
@@ -16,7 +16,7 @@ namespace PocketPeople.Items.UI
             inventoryMenu.Init();
 
             foreach(RuntimeItem item in PlayerInventory.Items)
-                inventoryMenu.CreateButton(item, itemDescription.ShowDescription, itemDescription.HideDescription, OnClickItem);
+                inventoryMenu.CreateButton(item, description.Show, description.Hide, OnClickItem);
 
             playerMoney.text = PlayerInventory.Money.ToString();
 
@@ -31,10 +31,7 @@ namespace PocketPeople.Items.UI
             PlayerInventory.OnTakeItem -= DeleteItemButton;
         }
 
-        private void OnClickItem(ItemButton itemButton)
-        {
-            Debug.Log($"Clicked on {itemButton.Item.ItemData.ItemName}");   //TODO: use item, remove from inventory
-        }
+        private void OnClickItem(ItemButton itemButton) => ItemProcessor.UseItem(itemButton.Item);
 
         public override void ToggleWindow()
         {
@@ -44,13 +41,8 @@ namespace PocketPeople.Items.UI
                 itemButton.SetButtonActive(isOpening);
         }
 
-        private void CreateNewItemButton(RuntimeItem newItem)
-        {
-            inventoryMenu.CreateButton(newItem, itemDescription.ShowDescription, itemDescription.HideDescription, OnClickItem);
-        }
-
+        private void CreateNewItemButton(RuntimeItem newItem) =>inventoryMenu.CreateButton(newItem, description.Show, description.Hide, OnClickItem);
         private void DeleteItemButton(RuntimeItem itemTaken) => inventoryMenu.DeleteButton(itemTaken);
-
         private void UpdateMoneyUI() => playerMoney.text = PlayerInventory.Money.ToString();
     }
 }

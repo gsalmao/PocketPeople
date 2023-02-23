@@ -9,7 +9,6 @@ namespace PocketPeople.Items
     public static class PlayerInventory
     {
         public static event Action OnChangeMoney = delegate { };
-
         public static event Action<RuntimeItem> OnReceiveItem = delegate { };
         public static event Action<RuntimeItem> OnTakeItem = delegate { };
 
@@ -18,17 +17,30 @@ namespace PocketPeople.Items
 
         private static bool initialized = false;
 
-        public static void Initialize(List<Item> initItems, int newMoney)
+        public static PlayerEquipment PlayerEquipment { get; private set; }
+
+        public static void Initialize(List<ItemData> initItems, int newMoney, List<EquipmentData> initEquipments)
         {
             if (initialized)
                 return;
 
+            //Inventory
             Items = new List<RuntimeItem>();
-            
-            foreach (Item item in initItems)
+
+            foreach (ItemData item in initItems)
                 Items.Add(new RuntimeItem(item));
 
+            //Equipment
+            List<RuntimeItem> initEquipmentsRuntime = new List<RuntimeItem>();
+
+            foreach (EquipmentData initEquip in initEquipments)
+                initEquipmentsRuntime.Add(new RuntimeItem(initEquip));
+
+            PlayerEquipment = new PlayerEquipment(initEquipmentsRuntime);
+
+            //Money
             Money = newMoney;
+
             initialized = true;
         }
 

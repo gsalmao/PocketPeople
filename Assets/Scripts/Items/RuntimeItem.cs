@@ -9,12 +9,13 @@ namespace PocketPeople.Items
     /// </summary>
     public class RuntimeItem
     {
-        public RuntimeItem(Item item)
+        public RuntimeItem(ItemData item)
         {
             ItemData = item;
         }
 
-        public Item ItemData { get; private set; }
+        public ItemData ItemData { get; private set; }
         
+        public bool Equipped { get; set; }
     }
 }

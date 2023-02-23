@@ -3,6 +3,7 @@ using PocketPeople.Interactables;
 using PocketPeople.Items;
 using PocketPeople.Items.UI;
 using PocketPeople.UI;
+using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,8 +16,9 @@ namespace PocketPeople.Player
     {
         public static Transform PlayerBody { get; private set; }
 
-        [SerializeField] private List<Item> initItems;
-        [SerializeField] private int initMoney;
+        [SerializeField, FoldoutGroup("Initialization")] private List<EquipmentData> initEquipments;
+        [SerializeField, FoldoutGroup("Initialization")] private List<ItemData> initItems;
+        [SerializeField, FoldoutGroup("Initialization")] private int initMoney;
         
         [Space]
 
@@ -37,7 +39,7 @@ namespace PocketPeople.Player
         private void Awake()
         {
             PlayerBody = animator.transform;
-            PlayerInventory.Initialize(initItems, initMoney);
+            PlayerInventory.Initialize(initItems, initMoney, initEquipments);
             mainInput = new MainInput();
             inventoryUI.InitInventoryUI();
             BasicWindow.OnToggleMenu += TogglePlayerController;

@@ -18,7 +18,7 @@ namespace PocketPeople.Interactables.Shopkeeper
 
         [SerializeField, FoldoutGroup("Shopkeeper Settings")] private Color buyColor;
         [SerializeField, FoldoutGroup("Shopkeeper Settings")] private Color sellColor;
-        [SerializeField] private List<Item> availableItems;
+        [SerializeField] private List<ItemData> availableItems;
 
         public void InitShopWindow()
         {
@@ -27,7 +27,7 @@ namespace PocketPeople.Interactables.Shopkeeper
             playerMenu.Init();
             shopMenu.Init();
 
-            foreach (Item itemData in availableItems)
+            foreach (ItemData itemData in availableItems)
                 shopMenu.CreateButton(new RuntimeItem(itemData), OnBuyHover, OnUnhover, OnBuy);
         }
 
@@ -51,7 +51,7 @@ namespace PocketPeople.Interactables.Shopkeeper
 
         private void OnUnhover()
         {
-            itemDescription.HideDescription();
+            itemDescription.Hide();
             playerMoney.color = Color.white;
             itemPrice.text = "";
             playerMoney.text = PlayerInventory.Money.ToString();
@@ -60,7 +60,7 @@ namespace PocketPeople.Interactables.Shopkeeper
         #region Sell Methods
         private void OnSellHover(RuntimeItem item)
         {
-            itemDescription.ShowDescription(item);
+            itemDescription.Show(item);
             playerMoney.color = sellColor;
             playerMoney.text = (PlayerInventory.Money + item.ItemData.SellPrice).ToString();
             itemPrice.color = sellColor;
@@ -83,7 +83,7 @@ namespace PocketPeople.Interactables.Shopkeeper
         #region Buy Methods
         private void OnBuyHover(RuntimeItem item)
         {
-            itemDescription.ShowDescription(item);
+            itemDescription.Show(item);
             playerMoney.color = buyColor;
             playerMoney.text = item.ItemData.BuyPrice > PlayerInventory.Money ? "~" : (PlayerInventory.Money - item.ItemData.BuyPrice).ToString();
             itemPrice.color = buyColor;
