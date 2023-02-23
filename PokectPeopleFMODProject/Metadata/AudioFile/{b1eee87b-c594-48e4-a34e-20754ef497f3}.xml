@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b1eee87b-c594-48e4-a34e-20754ef497f3}">
+		<property name="assetPath">
+			<value>SFX/DM-CGS-16.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.17839002267573695</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d65035d8-19e9-4722-bc32-47de137e629b}</destination>
+		</relationship>
+	</object>
+</objects>

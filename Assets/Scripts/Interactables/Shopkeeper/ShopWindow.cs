@@ -5,9 +5,12 @@ using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Xml.Serialization;
+using System.IO;
 
 public class ShopWindow : BasicWindow
 {
+    [SerializeField] private string shopKeeperName;
     [SerializeField, FoldoutGroup("References")] private ItemsMenu playerMenu;
     [SerializeField, FoldoutGroup("References")] private ItemsMenu shopMenu;
     [SerializeField, FoldoutGroup("References")] private TextMeshProUGUI price;
@@ -15,6 +18,11 @@ public class ShopWindow : BasicWindow
     [SerializeField, FoldoutGroup("Shopkeeper Settings")] private Color buyColor;
     [SerializeField, FoldoutGroup("Shopkeeper Settings")] private Color sellColor;
     [SerializeField] private List<BaseItem> availableItems;
+
+    private void Awake()
+    {
+        
+    }
 
     public void InitShopWindow()
     {
