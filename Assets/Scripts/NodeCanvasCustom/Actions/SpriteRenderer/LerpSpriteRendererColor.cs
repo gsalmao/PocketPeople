@@ -15,7 +15,7 @@ namespace NodeCanvas.Tasks.Actions
 
 		private float t;
 
-		protected override string info => $"Lerping SpriteRenderer Color to {finalColor}";
+		protected override string info => $"Lerping sprite color to {finalColor}.";
 
 		protected override void OnExecute() => t = 0f;
 
@@ -24,7 +24,10 @@ namespace NodeCanvas.Tasks.Actions
 			t += Time.fixedDeltaTime / time.value;
 			agent.color = Color.Lerp(initColor.value, finalColor.value, curve.value.Evaluate(t));
 			if (t >= 1)
+            {
+				agent.color = finalColor.value;
 				EndAction(true);
+            }
 		}
 	}
 }

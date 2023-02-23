@@ -176,7 +176,7 @@ MonoBehaviour:
   _disableAction: 0
   _lockBoundGraphPrefabOverrides: 1
   _preInitializeSubGraphs: 0
-  _updateMode: 0
+  _updateMode: 2
   _graph: {fileID: 11400000, guid: d0c720775ad5527428cf3cfa317f4094, type: 2}
   _blackboard: {fileID: 441601584149769339}
 --- !u!114 &441601584149769339
@@ -192,28 +192,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_variables":{"Waypoints":{"_value":[1,2,3,4],"_name":"Waypoints","_id":"e25c47a4-e7b4-4062-9fc9-01ed580dca78","$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[UnityEngine.Transform,
+  _serializedBlackboard: '{"_variables":{"References":{"_value":{},"_name":"References","_id":"775b757b-8665-4020-9876-3a78e8e340aa","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+    ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Animator":{"_value":1,"_name":"Animator","_id":"a73b9741-55fd-45db-86b8-af5a0fe847e0","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Animator,
+    UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"SpriteRenderer":{"_value":2,"_name":"SpriteRenderer","_id":"b052944d-a069-4e68-b5e0-fe520c6a31dc","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.SpriteRenderer,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Waypoints
+    References":{"_value":{},"_name":"Waypoints References","_id":"236658eb-1c0b-49d2-9b9f-b168fc8d44e0","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+    ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Waypoints":{"_value":[3,4,5,6],"_name":"Waypoints","_id":"e25c47a4-e7b4-4062-9fc9-01ed580dca78","$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[UnityEngine.Transform,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"FlyAwayWaypoint":{"_value":5,"_name":"FlyAwayWaypoint","_id":"c7039113-5425-4b72-b9d4-34d1b037baf6","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Animator":{"_value":6,"_name":"Animator","_id":"a73b9741-55fd-45db-86b8-af5a0fe847e0","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Animator,
-    UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"SpriteRenderer":{"_value":7,"_name":"SpriteRenderer","_id":"b052944d-a069-4e68-b5e0-fe520c6a31dc","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.SpriteRenderer,
-    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Speed":{"_value":1.5,"_name":"Speed","_id":"51a2b296-26e1-4c82-bac5-2805c442a51a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"MinIdleTime":{"_value":1.0,"_name":"MinIdleTime","_id":"ed829c3c-d016-48ac-8760-7288a9082333","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"FlyAwayWaypoint":{"_value":7,"_name":"FlyAwayWaypoint","_id":"c7039113-5425-4b72-b9d4-34d1b037baf6","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Bird
+    Settings":{"_value":{},"_name":"Bird Settings","_id":"833cf3e6-4f37-4eb5-9efe-0770897b3103","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+    ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"MinIdleTime":{"_value":1.0,"_name":"MinIdleTime","_id":"ed829c3c-d016-48ac-8760-7288a9082333","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"MaxIdleTime":{"_value":5.0,"_name":"MaxIdleTime","_id":"9c18adee-fb85-43fe-b844-233efea7eb8e","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"WaitTime":{"_value":3.0,"_name":"WaitTime","_id":"004181ae-d7f2-44d3-81d1-027882c5594c","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"FlyDistance":{"_value":2.0,"_name":"FlyDistance","_id":"8bb6094c-56b9-4df0-b079-032726637462","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"FlySpeed":{"_value":6.0,"_name":"FlySpeed","_id":"e0795750-f450-4b66-8d93-20045bdb12c6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"ScareDistance":{"_value":2.0,"_name":"ScareDistance","_id":"8bb6094c-56b9-4df0-b079-032726637462","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"WalkSpeed":{"_value":1.5,"_name":"WalkSpeed","_id":"51a2b296-26e1-4c82-bac5-2805c442a51a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"FlyTime":{"_value":4.0,"_name":"FlyTime","_id":"e0795750-f450-4b66-8d93-20045bdb12c6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"ReturnWaitTime":{"_value":8.0,"_name":"ReturnWaitTime","_id":"1fc37f1b-88eb-48f3-8984-b9c8866baa14","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
   _objectReferences:
   - {fileID: 0}
+  - {fileID: 1327777966591806455}
+  - {fileID: 4121230919070251305}
   - {fileID: 4111214181336550148}
   - {fileID: 4208194058868357968}
   - {fileID: 1354541186341154426}
   - {fileID: 4591427443588275357}
   - {fileID: 2693260545942737880}
-  - {fileID: 1327777966591806455}
-  - {fileID: 4121230919070251305}
   _serializedVariables:
+  - _json: '{"_value":{},"_name":"References","_id":"775b757b-8665-4020-9876-3a78e8e340aa","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+      ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references: []
+  - _json: '{"_value":1,"_name":"Animator","_id":"a73b9741-55fd-45db-86b8-af5a0fe847e0","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Animator,
+      UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 1327777966591806455}
+  - _json: '{"_value":1,"_name":"SpriteRenderer","_id":"b052944d-a069-4e68-b5e0-fe520c6a31dc","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.SpriteRenderer,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 4121230919070251305}
+  - _json: '{"_value":{},"_name":"Waypoints References","_id":"236658eb-1c0b-49d2-9b9f-b168fc8d44e0","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+      ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references: []
   - _json: '{"_value":[1,2,3,4],"_name":"Waypoints","_id":"e25c47a4-e7b4-4062-9fc9-01ed580dca78","$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[UnityEngine.Transform,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
@@ -228,18 +249,8 @@ MonoBehaviour:
     _references:
     - {fileID: 0}
     - {fileID: 2693260545942737880}
-  - _json: '{"_value":1,"_name":"Animator","_id":"a73b9741-55fd-45db-86b8-af5a0fe847e0","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Animator,
-      UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
-    _references:
-    - {fileID: 0}
-    - {fileID: 1327777966591806455}
-  - _json: '{"_value":1,"_name":"SpriteRenderer","_id":"b052944d-a069-4e68-b5e0-fe520c6a31dc","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.SpriteRenderer,
-      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
-    _references:
-    - {fileID: 0}
-    - {fileID: 4121230919070251305}
-  - _json: '{"_value":1.5,"_name":"Speed","_id":"51a2b296-26e1-4c82-bac5-2805c442a51a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+  - _json: '{"_value":{},"_name":"Bird Settings","_id":"833cf3e6-4f37-4eb5-9efe-0770897b3103","$type":"NodeCanvas.Framework.Variable`1[[NodeCanvas.Framework.VariableSeperator,
+      ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references: []
   - _json: '{"_value":1.0,"_name":"MinIdleTime","_id":"ed829c3c-d016-48ac-8760-7288a9082333","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
@@ -247,13 +258,16 @@ MonoBehaviour:
   - _json: '{"_value":5.0,"_name":"MaxIdleTime","_id":"9c18adee-fb85-43fe-b844-233efea7eb8e","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
-  - _json: '{"_value":3.0,"_name":"WaitTime","_id":"004181ae-d7f2-44d3-81d1-027882c5594c","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  - _json: '{"_value":2.0,"_name":"ScareDistance","_id":"8bb6094c-56b9-4df0-b079-032726637462","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
-  - _json: '{"_value":2.0,"_name":"FlyDistance","_id":"8bb6094c-56b9-4df0-b079-032726637462","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  - _json: '{"_value":1.5,"_name":"WalkSpeed","_id":"51a2b296-26e1-4c82-bac5-2805c442a51a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
-  - _json: '{"_value":6.0,"_name":"FlySpeed","_id":"e0795750-f450-4b66-8d93-20045bdb12c6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  - _json: '{"_value":4.0,"_name":"FlyTime","_id":"e0795750-f450-4b66-8d93-20045bdb12c6","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
+    _references: []
+  - _json: '{"_value":8.0,"_name":"ReturnWaitTime","_id":"1fc37f1b-88eb-48f3-8984-b9c8866baa14","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
 --- !u!1 &5933976160703330890
