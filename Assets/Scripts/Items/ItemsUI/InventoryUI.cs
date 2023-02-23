@@ -15,7 +15,7 @@ namespace PocketPeople.Items.UI
         {
             inventoryMenu.Init();
 
-            foreach(BaseItem item in PlayerInventory.Items)
+            foreach(RuntimeItem item in PlayerInventory.Items)
                 inventoryMenu.CreateButton(item, itemDescription.ShowDescription, itemDescription.HideDescription, OnClickItem);
 
             playerMoney.text = PlayerInventory.Money.ToString();
@@ -33,7 +33,7 @@ namespace PocketPeople.Items.UI
 
         private void OnClickItem(ItemButton itemButton)
         {
-            Debug.Log($"Clicked on {itemButton.Item.ItemName}");   //TODO: use item, remove from inventory
+            Debug.Log($"Clicked on {itemButton.Item.ItemData.ItemName}");   //TODO: use item, remove from inventory
         }
 
         public override void ToggleWindow()
@@ -44,12 +44,12 @@ namespace PocketPeople.Items.UI
                 itemButton.SetButtonActive(isOpening);
         }
 
-        private void CreateNewItemButton(BaseItem newItem)
+        private void CreateNewItemButton(RuntimeItem newItem)
         {
             inventoryMenu.CreateButton(newItem, itemDescription.ShowDescription, itemDescription.HideDescription, OnClickItem);
         }
 
-        private void DeleteItemButton(BaseItem itemTaken) => inventoryMenu.DeleteButton(itemTaken);
+        private void DeleteItemButton(RuntimeItem itemTaken) => inventoryMenu.DeleteButton(itemTaken);
 
         private void UpdateMoneyUI() => playerMoney.text = PlayerInventory.Money.ToString();
     }

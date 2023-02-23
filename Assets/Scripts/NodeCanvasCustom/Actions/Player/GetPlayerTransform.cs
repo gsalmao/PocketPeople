@@ -1,6 +1,6 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
-using PocketPeople.Characters.Player;
+using PocketPeople.Player;
 using UnityEngine;
 
 namespace NodeCanvasCustom.Actions{

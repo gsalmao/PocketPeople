@@ -36,7 +36,7 @@ namespace PocketPeople.Items.UI
             itemButtons.Clear();
         }
 
-        public ItemButton CreateButton(BaseItem item, Action<BaseItem> onHoverItem, Action onExitHoverItem, Action<ItemButton> onClick)
+        public ItemButton CreateButton(RuntimeItem item, Action<RuntimeItem> onHoverItem, Action onExitHoverItem, Action<ItemButton> onClick)
         {
             ItemButton newButton = buttonsPool.Get();
             newButton.transform.SetParent(inventoryContent);
@@ -61,7 +61,7 @@ namespace PocketPeople.Items.UI
         /// <summary>
         /// Delete one of the itemButtons with given item.
         /// </summary>
-        public void DeleteButton(BaseItem item)
+        public void DeleteButton(RuntimeItem item)
         {
             foreach(ItemButton itemButton in itemButtons)
             {

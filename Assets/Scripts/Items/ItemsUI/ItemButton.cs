@@ -11,16 +11,16 @@ namespace PocketPeople.Items.UI
     /// </summary>
     public class ItemButton : CursorModifier
     {
-        private Action<BaseItem> OnHoverItem = delegate { };
+        private Action<RuntimeItem> OnHoverItem = delegate { };
         private Action OnExitHoverItem = delegate { };
 
         [SerializeField] private TextMeshProUGUI itemName;
         [SerializeField] private Image itemIcon;
         [SerializeField] private Button button;
 
-        private BaseItem item;
+        private RuntimeItem item;
 
-        public BaseItem Item => item;
+        public RuntimeItem Item => item;
 
         protected override void OnEnable()
         {
@@ -48,15 +48,15 @@ namespace PocketPeople.Items.UI
         /// <param name="OnHoverItem">Callback whenever mouse is over the item.</param>
         /// <param name="OnExitHoverItem">Callback whenever the mouse leaves the item's area.</param>
         /// <param name="OnClickItem">Callback whenever the item is clicked.</param>
-        public void SetButton(ItemButton itemButton, BaseItem item, Action<BaseItem> OnHoverItem, Action OnExitHoverItem, Action<ItemButton> OnClickItem)
+        public void SetButton(ItemButton itemButton, RuntimeItem item, Action<RuntimeItem> OnHoverItem, Action OnExitHoverItem, Action<ItemButton> OnClickItem)
         {
             this.OnHoverItem = OnHoverItem;
             this.OnExitHoverItem = OnExitHoverItem;
             button.onClick.AddListener(delegate { OnClickItem(itemButton); });
 
             this.item = item;
-            itemName.text = item.ItemName;
-            itemIcon.sprite = item.Icon;
+            itemName.text = item.ItemData.ItemName;
+            itemIcon.sprite = item.ItemData.Icon;
             itemIcon.color = Color.white;
         }
 

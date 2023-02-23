@@ -18,7 +18,7 @@ namespace PocketPeople.Interactables.Shopkeeper
 
         [SerializeField, FoldoutGroup("Shopkeeper Settings")] private Color buyColor;
         [SerializeField, FoldoutGroup("Shopkeeper Settings")] private Color sellColor;
-        [SerializeField] private List<BaseItem> availableItems;
+        [SerializeField] private List<Item> availableItems;
 
         public void InitShopWindow()
         {
@@ -27,8 +27,8 @@ namespace PocketPeople.Interactables.Shopkeeper
             playerMenu.Init();
             shopMenu.Init();
 
-            foreach (BaseItem item in availableItems)
-                shopMenu.CreateButton(item, OnBuyHover, OnUnhover, OnBuy);
+            foreach (Item itemData in availableItems)
+                shopMenu.CreateButton(new RuntimeItem(itemData), OnBuyHover, OnUnhover, OnBuy);
         }
 
         public override void ToggleWindow()
@@ -37,12 +37,10 @@ namespace PocketPeople.Interactables.Shopkeeper
 
             if (isOpening)
             {
-
-                foreach (BaseItem item in PlayerInventory.Items)
+                playerMenu.ClearMenu();
+                foreach (RuntimeItem item in PlayerInventory.Items)
                     playerMenu.CreateButton(item, OnSellHover, OnUnhover, OnSell);
             }
-            else
-                playerMenu.ClearMenu();
 
             foreach (ItemButton itemButton in playerMenu.ItemButtons)
                 itemButton.SetButtonActive(isOpening);
@@ -60,20 +58,20 @@ namespace PocketPeople.Interactables.Shopkeeper
         }
 
         #region Sell Methods
-        private void OnSellHover(BaseItem item)
+        private void OnSellHover(RuntimeItem item)
         {
             itemDescription.ShowDescription(item);
             playerMoney.color = sellColor;
-            playerMoney.text = (PlayerInventory.Money + item.SellPrice).ToString();
+            playerMoney.text = (PlayerInventory.Money + item.ItemData.SellPrice).ToString();
             itemPrice.color = sellColor;
-            itemPrice.text = $"+{item.SellPrice}";
+            itemPrice.text = $"+{item.ItemData.SellPrice}";
         }
 
         private void OnSell(ItemButton itemButton)
         {
             if (itemButton.Item == null) return;
 
-            PlayerInventory.ReceiveMoney(itemButton.Item.SellPrice);
+            PlayerInventory.ReceiveMoney(itemButton.Item.ItemData.SellPrice);
             PlayerInventory.TakeItem(itemButton.Item);
 
             shopMenu.CreateButton(itemButton.Item, OnBuyHover, OnUnhover, OnBuy);
@@ -83,22 +81,22 @@ namespace PocketPeople.Interactables.Shopkeeper
         #endregion
 
         #region Buy Methods
-        private void OnBuyHover(BaseItem item)
+        private void OnBuyHover(RuntimeItem item)
         {
             itemDescription.ShowDescription(item);
             playerMoney.color = buyColor;
-            playerMoney.text = item.BuyPrice > PlayerInventory.Money ? "~" : (PlayerInventory.Money - item.BuyPrice).ToString();
+            playerMoney.text = item.ItemData.BuyPrice > PlayerInventory.Money ? "~" : (PlayerInventory.Money - item.ItemData.BuyPrice).ToString();
             itemPrice.color = buyColor;
-            itemPrice.text = $"-{item.BuyPrice}";
+            itemPrice.text = $"-{item.ItemData.BuyPrice}";
         }
 
         private void OnBuy(ItemButton itemButton)
         {
-            if (itemButton.Item.BuyPrice > PlayerInventory.Money)
+            if (itemButton.Item.ItemData.BuyPrice > PlayerInventory.Money)
                 return;
 
             PlayerInventory.ReceiveItem(itemButton.Item);
-            PlayerInventory.TakeMoney(itemButton.Item.BuyPrice);
+            PlayerInventory.TakeMoney(itemButton.Item.ItemData.BuyPrice);
 
             playerMenu.CreateButton(itemButton.Item, OnSellHover, OnUnhover, OnSell);
             shopMenu.DeleteButton(itemButton);

@@ -1154,7 +1154,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1388035105812211446, guid: a4330bf1d34224b43b2a3182f393127d, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1393435426973199673, guid: a4330bf1d34224b43b2a3182f393127d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1411,7 +1411,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: aca23b1bfdc197e47bc899add36b2c90, type: 2}
   - {fileID: 11400000, guid: dfce0c20a0449694cb4fe937f501538c, type: 2}
   - {fileID: 11400000, guid: da614cb3310e2d440bd021091ea11c35, type: 2}
-  initMoney: 666
+  initMoney: 100
   rb2d: {fileID: 6060675189045118065}
   animator: {fileID: 6453011894652843135}
   inventoryUI: {fileID: 2769814235886594427}

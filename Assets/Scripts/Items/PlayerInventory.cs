@@ -10,33 +10,37 @@ namespace PocketPeople.Items
     {
         public static event Action OnChangeMoney = delegate { };
 
-        public static event Action<BaseItem> OnReceiveItem = delegate { };
-        public static event Action<BaseItem> OnTakeItem = delegate { };
+        public static event Action<RuntimeItem> OnReceiveItem = delegate { };
+        public static event Action<RuntimeItem> OnTakeItem = delegate { };
 
-        public static List<BaseItem> Items { get; private set; }
+        public static List<RuntimeItem> Items { get; private set; }
         public static int Money { get; private set; }
 
         private static bool initialized = false;
 
-        public static void Initialize(List<BaseItem> newItems, int newMoney)
+        public static void Initialize(List<Item> initItems, int newMoney)
         {
             if (initialized)
                 return;
 
-            Items = newItems;
+            Items = new List<RuntimeItem>();
+            
+            foreach (Item item in initItems)
+                Items.Add(new RuntimeItem(item));
+
             Money = newMoney;
             initialized = true;
         }
 
 
         #region Item Operations
-        public static void ReceiveItem(BaseItem item)
+        public static void ReceiveItem(RuntimeItem item)
         {
             Items.Add(item);
             OnReceiveItem(item);
         }
 
-        public static void TakeItem(BaseItem item)
+        public static void TakeItem(RuntimeItem item)
         {
             Items.Remove(item);
             OnTakeItem(item);

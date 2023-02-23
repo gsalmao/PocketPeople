@@ -354,8 +354,7 @@ MonoBehaviour:
   _parentBlackboard: {fileID: 0}
   _serializedBlackboard: '{"_variables":{"Waypoints":{"_value":[1,2,3,4],"_name":"Waypoints","_id":"e25c47a4-e7b4-4062-9fc9-01ed580dca78","$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[UnityEngine.Transform,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Character":{"_value":5,"_name":"Character","_id":"1623b238-e062-498e-95e1-c7378aae4e36","$type":"NodeCanvas.Framework.Variable`1[[PocketPeople.Characters.BaseCharacter,
-    PocketPeople.Characters, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"Animator":{"_value":6,"_name":"Animator","_id":"a73b9741-55fd-45db-86b8-af5a0fe847e0","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Animator,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Animator":{"_value":5,"_name":"Animator","_id":"a73b9741-55fd-45db-86b8-af5a0fe847e0","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Animator,
     UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"IdleTime":{"_value":3.0,"_name":"IdleTime","_id":"004181ae-d7f2-44d3-81d1-027882c5594c","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Speed":{"_value":2.5,"_name":"Speed","_id":"51a2b296-26e1-4c82-bac5-2805c442a51a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
@@ -365,7 +364,6 @@ MonoBehaviour:
   - {fileID: 2837053370171435359}
   - {fileID: 9137685672357098595}
   - {fileID: 5841393650042870974}
-  - {fileID: 8125485579114270635}
   - {fileID: 7552766261795927107}
   _serializedVariables:
   - _json: '{"_value":[1,2,3,4],"_name":"Waypoints","_id":"e25c47a4-e7b4-4062-9fc9-01ed580dca78","$type":"NodeCanvas.Framework.Variable`1[[System.Collections.Generic.List`1[[UnityEngine.Transform,
@@ -377,11 +375,6 @@ MonoBehaviour:
     - {fileID: 2837053370171435359}
     - {fileID: 9137685672357098595}
     - {fileID: 5841393650042870974}
-  - _json: '{"_value":1,"_name":"Character","_id":"1623b238-e062-498e-95e1-c7378aae4e36","$type":"NodeCanvas.Framework.Variable`1[[PocketPeople.Characters.BaseCharacter,
-      PocketPeople.Characters, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
-    _references:
-    - {fileID: 0}
-    - {fileID: 8125485579114270635}
   - _json: '{"_value":1,"_name":"Animator","_id":"a73b9741-55fd-45db-86b8-af5a0fe847e0","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Animator,
       UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references:
@@ -393,18 +386,6 @@ MonoBehaviour:
   - _json: '{"_value":2.5,"_name":"Speed","_id":"51a2b296-26e1-4c82-bac5-2805c442a51a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
---- !u!114 &8125485579114270635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7277195995442460999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 089f096162dff6b46bf8395ac085791c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &7552766261795927107 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7074094091668106690, guid: 86b6b05f1b498c04cbd5c50e5910e3f1, type: 3}

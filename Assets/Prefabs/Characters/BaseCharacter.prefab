@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3140729245040903071}
   - component: {fileID: 6050465051195644078}
-  - component: {fileID: 6703368610429637368}
+  - component: {fileID: 1971874671058112395}
   m_Layer: 0
   m_Name: Hat
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6703368610429637368
+--- !u!114 &1971874671058112395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,8 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6d49dec2def8749868b9cba6aae08d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 6050465051195644078}
-  data: {fileID: 0}
   spriteIndex: 0
 --- !u!1 &1576746178771266667
 GameObject:
@@ -110,9 +108,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4245990450244609505}
   - component: {fileID: 8868795954924481002}
-  - component: {fileID: 4320526758368665011}
   - component: {fileID: 7074094091668106690}
   - component: {fileID: 9038683086103150785}
+  - component: {fileID: 8933810583627060377}
   m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
@@ -162,21 +160,6 @@ MonoBehaviour:
     modifier: 3
   - spriteRenderer: {fileID: 6050465051195644078}
     modifier: 4
---- !u!114 &4320526758368665011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576746178771266667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf6d49dec2def8749868b9cba6aae08d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 9038683086103150785}
-  data: {fileID: 11400000, guid: 336461f4c5979084583a22639167f857, type: 2}
-  spriteIndex: 0
 --- !u!95 &7074094091668106690
 Animator:
   serializedVersion: 4
@@ -249,6 +232,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8933810583627060377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576746178771266667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf6d49dec2def8749868b9cba6aae08d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteIndex: 0
 --- !u!1 &6358586950511195493
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1077918093250946495}
   - component: {fileID: 6651430860850719633}
-  - component: {fileID: 3387438270469709034}
+  - component: {fileID: 3979554440782732526}
   m_Layer: 0
   m_Name: Hair
   m_TagString: Untagged
@@ -334,7 +330,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3387438270469709034
+--- !u!114 &3979554440782732526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -346,8 +342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6d49dec2def8749868b9cba6aae08d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 6651430860850719633}
-  data: {fileID: 0}
   spriteIndex: 0
 --- !u!1 &7061124921711381475
 GameObject:
@@ -359,7 +353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 404571426959281594}
   - component: {fileID: 3349867010691355827}
-  - component: {fileID: 3377707246962068771}
+  - component: {fileID: 3047946380410110349}
   m_Layer: 0
   m_Name: Pants
   m_TagString: Untagged
@@ -434,7 +428,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3377707246962068771
+--- !u!114 &3047946380410110349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -446,8 +440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6d49dec2def8749868b9cba6aae08d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 3349867010691355827}
-  data: {fileID: 0}
   spriteIndex: 0
 --- !u!1 &7926652884614750406
 GameObject:
@@ -458,6 +450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7926652884614750403}
+  - component: {fileID: 7427156659145578663}
   m_Layer: 0
   m_Name: BaseCharacter
   m_TagString: Untagged
@@ -481,6 +474,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7427156659145578663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7926652884614750406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afffa36408bf6244ca02ac280d0db9f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  containers:
+  - key: Body
+    swapper: {fileID: 8933810583627060377}
+    data: {fileID: 11400000, guid: 336461f4c5979084583a22639167f857, type: 2}
+  - key: Pants
+    swapper: {fileID: 3047946380410110349}
+    data: {fileID: 11400000, guid: fcf2e8ecc01124c43ab135f012ff8cb4, type: 2}
+  - key: Shirt
+    swapper: {fileID: 3691235174238355383}
+    data: {fileID: 11400000, guid: 272a24d81a00bba41a734a3aaa675890, type: 2}
+  - key: Hair
+    swapper: {fileID: 3979554440782732526}
+    data: {fileID: 11400000, guid: e98abab0b85fcdc45bbb14dedf4a3770, type: 2}
+  - key: Hat
+    swapper: {fileID: 1971874671058112395}
+    data: {fileID: 0}
 --- !u!1 &8072668618218455972
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6461219739694109837}
   - component: {fileID: 538129080584004901}
-  - component: {fileID: 4380045746301068942}
+  - component: {fileID: 3691235174238355383}
   m_Layer: 0
   m_Name: Shirt
   m_TagString: Untagged
@@ -566,7 +587,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4380045746301068942
+--- !u!114 &3691235174238355383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -578,6 +599,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6d49dec2def8749868b9cba6aae08d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 538129080584004901}
-  data: {fileID: 0}
   spriteIndex: 0

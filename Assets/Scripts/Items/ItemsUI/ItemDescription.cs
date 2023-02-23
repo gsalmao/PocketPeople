@@ -12,10 +12,10 @@ namespace PocketPeople.Items.UI
         [SerializeField] private TextMeshProUGUI itemName;
         [SerializeField] private TextMeshProUGUI itemDescription;
 
-        public void ShowDescription(BaseItem item)
+        public void ShowDescription(RuntimeItem item)
         {
-            itemName.text = item.ItemName;
-            itemDescription.text = item.Description;
+            itemName.text = item.ItemData.ItemName;
+            itemDescription.text = item.ItemData.Description;
         }
 
         public void HideDescription()
