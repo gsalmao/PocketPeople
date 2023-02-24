@@ -17,3 +17,5 @@ MonoBehaviour:
     sentence: Have you checked the items in the store already?
   - speaker: Giorno
     sentence: Lots of shirts to try!
+  - speaker: Giorno
+    sentence: Just go up here and you'll find it.
