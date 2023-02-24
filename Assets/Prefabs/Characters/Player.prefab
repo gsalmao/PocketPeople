@@ -1411,18 +1411,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0923c63cdd3ad8a47b9549aafa4f234a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shirt: {fileID: 11400000, guid: d4a65a62022b18a46a0da9e69129ad8b, type: 2}
-  pants: {fileID: 0}
-  hat: {fileID: 0}
+  initEquipments: []
   initItems:
-  - {fileID: 11400000, guid: dfce0c20a0449694cb4fe937f501538c, type: 2}
-  - {fileID: 11400000, guid: da614cb3310e2d440bd021091ea11c35, type: 2}
+  - {fileID: 11400000, guid: 2b93377680f8fe44aba53ad20d2114f5, type: 2}
+  - {fileID: 11400000, guid: d4a65a62022b18a46a0da9e69129ad8b, type: 2}
   initMoney: 100
   rb2d: {fileID: 6060675189045118065}
   animator: {fileID: 6453011894652843135}
   inventoryUI: {fileID: 2769814235886594427}
   interactionSight: {fileID: 879550454218785696}
   speed: 3
+  playerEffects:
+    characterSwapper: {fileID: 6679683330091942170}
 --- !u!4 &6170124958262344062 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7926652884614750403, guid: 86b6b05f1b498c04cbd5c50e5910e3f1, type: 3}
@@ -1433,3 +1433,14 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 7074094091668106690, guid: 86b6b05f1b498c04cbd5c50e5910e3f1, type: 3}
   m_PrefabInstance: {fileID: 4296872991539993021}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6679683330091942170 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7427156659145578663, guid: 86b6b05f1b498c04cbd5c50e5910e3f1, type: 3}
+  m_PrefabInstance: {fileID: 4296872991539993021}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6170124958262344059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afffa36408bf6244ca02ac280d0db9f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

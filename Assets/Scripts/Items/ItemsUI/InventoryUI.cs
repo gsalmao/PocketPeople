@@ -31,7 +31,7 @@ namespace PocketPeople.Items.UI
             PlayerInventory.OnTakeItem -= DeleteItemButton;
         }
 
-        private void OnClickItem(ItemButton itemButton) => ItemProcessor.UseItem(itemButton.Item);
+        private void OnClickItem(ItemButton itemButton) => PlayerInventory.UseItem(itemButton.Item);
 
         public override void ToggleWindow()
         {

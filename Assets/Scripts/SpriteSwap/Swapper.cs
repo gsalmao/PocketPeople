@@ -13,9 +13,12 @@ namespace PocketPeople.SpriteSwap
         protected SwapperData swapperData;
         private SpriteRenderer spriteRenderer;
 
+
         protected virtual void Awake() => spriteRenderer = GetComponent<SpriteRenderer>();
 
         public void Init(SwapperData swapperData) => this.swapperData = swapperData;
+
+        public void ChangeSwapperData(SwapperData newData) => swapperData = newData;
 
         private void Update()
         {

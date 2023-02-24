@@ -10,10 +10,5 @@ namespace PocketPeople.Items
 
         public float Nutrition => nutrition;
         public float Hydration => hydration;
-
-        public override void Activate()
-        {
-                //TODO: eat food
-        }
     }
 }

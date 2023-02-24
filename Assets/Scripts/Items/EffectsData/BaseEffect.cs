@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace PocketPeople.Items
@@ -7,6 +8,7 @@ namespace PocketPeople.Items
     /// </summary>
     public abstract class BaseEffect : ScriptableObject
     {
-        public abstract void Activate();
+        public static event Action<BaseEffect> OnActivate;
+        public void Activate() => OnActivate(this);
     }
 }

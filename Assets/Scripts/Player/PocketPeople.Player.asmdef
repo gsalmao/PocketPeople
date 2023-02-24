@@ -1,0 +1,22 @@
+{
+    "name": "PocketPeople.Player",
+    "rootNamespace": "PocketPeople.Player",
+    "references": [
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:58384fb66d6b93d4bae449a2b2ef4f60",
+        "GUID:5faba8e5996223341908a2b412aea5dc",
+        "GUID:071191d518e2c934ca8c5d4e008ca479",
+        "GUID:1718f6bee7736904d9449717cc073d29",
+        "GUID:d1de635a776e39a42aa5588d7ec85938",
+        "GUID:645b78a5ee5328f43bec394ab9280cc4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

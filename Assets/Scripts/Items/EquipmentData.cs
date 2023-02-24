@@ -8,14 +8,14 @@ namespace PocketPeople.Items
     [CreateAssetMenu(fileName = "Simple Item", menuName = "ScriptableObjects/Items/Equipment", order = 1)]
     public class EquipmentData : ItemData
     {
-        [SerializeField] private BaseEffect EquipEffect;
-        [SerializeField] private EquipmentType type;
+        [SerializeField] private EquipmentSlot slot;
+        [SerializeField] private BaseEffect equipEffect;
 
-        public void OnEquip() => EquipEffect.Activate();
-        public EquipmentType Type => type;
+        public EquipmentSlot Slot => slot;
+        public BaseEffect EquipEffect => equipEffect;
     }
 
-    public enum EquipmentType
+    public enum EquipmentSlot
     {
         Shirt,
         Pants,

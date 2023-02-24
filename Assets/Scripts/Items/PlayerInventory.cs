@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace PocketPeople.Items
 {
@@ -19,7 +20,7 @@ namespace PocketPeople.Items
 
         public static PlayerEquipment PlayerEquipment { get; private set; }
 
-        public static void Initialize(List<ItemData> initItems, int newMoney, List<EquipmentData> initEquipments)
+        public static void Init(List<ItemData> initItems, int newMoney, List<EquipmentData> initEquipments)
         {
             if (initialized)
                 return;
@@ -45,7 +46,7 @@ namespace PocketPeople.Items
         }
 
 
-        #region Item Operations
+        #region Item Methods
         public static void ReceiveItem(RuntimeItem item)
         {
             Items.Add(item);
@@ -57,9 +58,22 @@ namespace PocketPeople.Items
             Items.Remove(item);
             OnTakeItem(item);
         }
+
+        public static void UseItem(RuntimeItem item)
+        {
+            ItemData checkedItem = item.ItemData;
+
+            if (checkedItem is EquipmentData)
+            {
+                (checkedItem as EquipmentData).EquipEffect.Activate();
+                PlayerEquipment.EquipItem(item);
+                return;
+            }
+
+        }
         #endregion
 
-        #region Money Operations
+        #region Money Methods
         public static void ReceiveMoney(int amount)
         {
             Money += amount;

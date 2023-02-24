@@ -17,5 +17,5 @@ MonoBehaviour:
   buyPrice: 30
   sellPrice: 15
   icon: {fileID: 21300000, guid: 618f757aaa201b74c9bbdb0297a5ffda, type: 3}
-  EquipEffect: {fileID: 11400000, guid: c53a8fdd5395af64eacda8ff89de687b, type: 2}
-  type: 0
+  slot: 0
+  equipEffect: {fileID: 11400000, guid: c53a8fdd5395af64eacda8ff89de687b, type: 2}

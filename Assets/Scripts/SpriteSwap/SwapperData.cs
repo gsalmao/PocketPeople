@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace PocketPeople.SpriteSwap
@@ -11,7 +9,6 @@ namespace PocketPeople.SpriteSwap
     public class SwapperData : ScriptableObject
     {
         [SerializeField] private Sprite[] sprites;
-
         public Sprite[] Sprites => sprites;
     }
 }
