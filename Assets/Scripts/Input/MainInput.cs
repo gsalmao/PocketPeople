@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace PocketPeople.Inputs
+namespace PocketPeople.Input
 {
     public partial class @MainInput : IInputActionCollection2, IDisposable
     {

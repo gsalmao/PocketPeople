@@ -4,7 +4,7 @@ using System;
 namespace PocketPeople.Interactables
 {
     /// <summary>
-    /// Interactable scene objects, such as npcs, signs and shopkeepers.
+    /// Interactable scene objects. Such as npcs, signs, animals and shopkeepers.
     /// </summary>
     public class Interactable : CursorModifier
     {

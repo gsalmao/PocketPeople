@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-
 namespace PocketPeople.Dialogues
 {
     /// <summary>

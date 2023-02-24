@@ -1,20 +1,21 @@
 using FMODUnity;
 using System;
 using System.Collections.Generic;
+using PocketPeople.Items.Data;
 
 namespace PocketPeople.Items
 {
     /// <summary>
-    /// Global values of the player's inventory.
+    /// Process the player's inventory.
     /// </summary>
-    public static class PlayerInventory
+    public static class Inventory
     {
         public static event Action OnChangeMoney = delegate { };
         public static event Action<RuntimeItem> OnReceiveItem = delegate { };
         public static event Action<RuntimeItem> OnTakeItem = delegate { };
 
         public static List<RuntimeItem> Items { get; private set; }
-        public static PlayerEquipment PlayerEquipment { get; private set; }
+        public static Equipment PlayerEquipment { get; private set; }
         public static int Money { get; private set; }
 
         private static EventReference useItemSound;
@@ -40,7 +41,7 @@ namespace PocketPeople.Items
             foreach (EquipmentData initEquip in initEquipments)
                 initEquipmentsRuntime.Add(new RuntimeItem(initEquip));
 
-            PlayerEquipment = new PlayerEquipment(initEquipmentsRuntime);
+            PlayerEquipment = new Equipment(initEquipmentsRuntime);
 
             //Money
             Money = newMoney;
@@ -83,9 +84,6 @@ namespace PocketPeople.Items
                 PlayerEquipment.EquipItem(item);
                 return;
             }
-
-            
-
         }
         #endregion
 

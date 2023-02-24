@@ -1,8 +1,8 @@
 {
-    "name": "PocketPeople.Inputs",
-    "rootNamespace": "PocketPeople.Inputs",
+    "name": "PocketPeople.Items.Data",
+    "rootNamespace": "PocketPeople.Items.Data",
     "references": [
-        "GUID:75469ad4d38634e559750d17036d5f7c"
+        "GUID:be2b7b9cfff60c840ad4fe3f0546d49f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,6 +1,7 @@
-using PocketPeople.Inputs;
 using UnityEngine;
-namespace PocketPeople.ApplicationManager
+using PocketPeople.Input;
+
+namespace PocketPeople.UI
 {
     /// <summary>
     /// Simple script to open/close the quit menu.
@@ -31,7 +32,7 @@ namespace PocketPeople.ApplicationManager
             isOpen = !isOpen;
         }
 
-        public void QuitGame() => Application.Quit();
+        public void QuitGame() => UnityEngine.Application.Quit();
 
         private void OpenMenu()
         {

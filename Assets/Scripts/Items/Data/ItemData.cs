@@ -1,7 +1,7 @@
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-namespace PocketPeople.Items
+namespace PocketPeople.Items.Data
 {
     /// <summary>
     /// Holds the basic data for the items. Items that can't be used/equipped are also created as this type.

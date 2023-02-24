@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace PocketPeople.CursorEntities
@@ -11,35 +12,19 @@ namespace PocketPeople.CursorEntities
         [SerializeField] private Texture2D hoverCursor;
         [SerializeField] private Texture2D pressingCursor;
 
-        private static Texture2D IdleCursor;
-        private static Texture2D HoverCursor;
-        private static Texture2D PressingCursor;
+        private static Dictionary<CursorType, Texture2D> cursorTextures;
 
         private void Awake()
         {
-            IdleCursor = idleCursor;
-            HoverCursor = hoverCursor;
-            PressingCursor = pressingCursor;
+            cursorTextures = new Dictionary<CursorType, Texture2D>();
+            cursorTextures.Add(CursorType.Idle, idleCursor);
+            cursorTextures.Add(CursorType.Hover, hoverCursor);
+            cursorTextures.Add(CursorType.Pressing, pressingCursor);
             SetCursor(CursorType.Idle);
         }
 
-        public static void SetCursor(CursorType cursorMode)
-        {
-            switch(cursorMode)
-            {
-                case CursorType.Idle:
-                    Cursor.SetCursor(IdleCursor, Vector2.zero, CursorMode.Auto);
-                    break;
+        public static void SetCursor(CursorType cursorMode) => Cursor.SetCursor(cursorTextures[cursorMode], Vector2.zero, CursorMode.Auto);
 
-                case CursorType.Hover:
-                    Cursor.SetCursor(HoverCursor, Vector2.zero, CursorMode.Auto);
-                    break;
-
-                case CursorType.Pressing:
-                    Cursor.SetCursor(PressingCursor, Vector2.zero, CursorMode.Auto);
-                    break;
-            }
-        }
     }
     public enum CursorType
     {

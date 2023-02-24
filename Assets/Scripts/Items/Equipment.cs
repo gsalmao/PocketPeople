@@ -1,17 +1,17 @@
 using System.Collections.Generic;
-using UnityEngine;
+using PocketPeople.Items.Data;
 
 namespace PocketPeople.Items
 {
     /// <summary>
-    /// Handles player's equipped items.
+    /// Handles the player's equipped items.
     /// </summary>
-    public class PlayerEquipment
+    public class Equipment
     {
         private Dictionary<EquipmentSlot, RuntimeItem> slots;
         private List<RuntimeItem> equippedItems;
 
-        public PlayerEquipment(List<RuntimeItem> newEquipments)
+        public Equipment(List<RuntimeItem> newEquipments)
         {
             slots = new Dictionary<EquipmentSlot, RuntimeItem>();
             equippedItems = new List<RuntimeItem>();
@@ -36,12 +36,12 @@ namespace PocketPeople.Items
             
             if(slots.ContainsKey(newEquipmentSlot))
             {
-                PlayerInventory.ReceiveItem(slots[newEquipmentSlot]);
+                Inventory.ReceiveItem(slots[newEquipmentSlot]);
                 slots.Remove(newEquipmentSlot);
             }
 
             slots.Add(newEquipmentSlot, newEquipment);
-            PlayerInventory.TakeItem(newEquipment);
+            Inventory.TakeItem(newEquipment);
         }
     }
 }

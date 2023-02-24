@@ -6,7 +6,7 @@ using UnityEngine;
 namespace PocketPeople.Interactables
 {
     /// <summary>
-    /// Variation of the interactableDialogue, that sends signals to the npc's behaviour tree to change its behaviour.
+    /// Sends signals to the Npc's behaviour tree to change its behaviour.
     /// </summary>
     public class InteractableNpc : InteractableDialogue
     {

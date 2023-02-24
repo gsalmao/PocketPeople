@@ -15,23 +15,23 @@ namespace PocketPeople.Items.UI
         {
             inventoryMenu.Init();
 
-            foreach(RuntimeItem item in PlayerInventory.Items)
+            foreach(RuntimeItem item in Inventory.Items)
                 inventoryMenu.CreateButton(item, description.Show, description.Hide, OnClickItem);
 
-            playerMoney.text = PlayerInventory.Money.ToString();
+            playerMoney.text = Inventory.Money.ToString();
 
-            PlayerInventory.OnChangeMoney += UpdateMoneyUI;
-            PlayerInventory.OnReceiveItem += CreateNewItemButton;
-            PlayerInventory.OnTakeItem += DeleteItemButton;
+            Inventory.OnChangeMoney += UpdateMoneyUI;
+            Inventory.OnReceiveItem += CreateNewItemButton;
+            Inventory.OnTakeItem += DeleteItemButton;
         }
 
         private void OnDestroy()
         {
-            PlayerInventory.OnReceiveItem -= CreateNewItemButton;
-            PlayerInventory.OnTakeItem -= DeleteItemButton;
+            Inventory.OnReceiveItem -= CreateNewItemButton;
+            Inventory.OnTakeItem -= DeleteItemButton;
         }
 
-        private void OnClickItem(ItemButton itemButton) => PlayerInventory.UseItem(itemButton.Item);
+        private void OnClickItem(ItemButton itemButton) => Inventory.UseItem(itemButton.Item);
 
         public override void ToggleWindow()
         {
@@ -42,6 +42,6 @@ namespace PocketPeople.Items.UI
 
         private void CreateNewItemButton(RuntimeItem newItem) =>inventoryMenu.CreateButton(newItem, description.Show, description.Hide, OnClickItem);
         private void DeleteItemButton(RuntimeItem itemTaken) => inventoryMenu.DeleteButton(itemTaken);
-        private void UpdateMoneyUI() => playerMoney.text = PlayerInventory.Money.ToString();
+        private void UpdateMoneyUI() => playerMoney.text = Inventory.Money.ToString();
     }
 }

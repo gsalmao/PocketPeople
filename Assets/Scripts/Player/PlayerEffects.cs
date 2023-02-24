@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using PocketPeople.Items;
 using PocketPeople.SpriteSwap;
 using Sirenix.OdinInspector;
+using PocketPeople.Items.Effects;
 
 namespace PocketPeople.Player
 {

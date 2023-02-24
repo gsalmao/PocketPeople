@@ -6,7 +6,7 @@ using PocketPeople.Coroutines;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 
-namespace PocketPeople.ApplicationManager
+namespace PocketPeople.Application
 {
     /// <summary>
     /// Load scenes in the game and set them as active.

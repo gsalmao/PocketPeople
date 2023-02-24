@@ -2,13 +2,14 @@
     "name": "PocketPeople.Interactables.Shopkeeper",
     "rootNamespace": "PocketPeople.Interactables.Shopkeeper",
     "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:0c752da273b17c547ae705acf0f2adf2",
         "GUID:d1de635a776e39a42aa5588d7ec85938",
         "GUID:2520b0ee1de8ece448f678fcf2f8258b",
         "GUID:071191d518e2c934ca8c5d4e008ca479",
+        "GUID:6e459ad2ec3bbb54c8c51c09573299c7",
         "GUID:1718f6bee7736904d9449717cc073d29",
-        "GUID:5faba8e5996223341908a2b412aea5dc",
-        "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:0c752da273b17c547ae705acf0f2adf2"
+        "GUID:5faba8e5996223341908a2b412aea5dc"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,6 +1,7 @@
 using FMODUnity;
-using PocketPeople.Items;
 using UnityEngine;
+using PocketPeople.Items;
+using PocketPeople.Items.Data;
 
 namespace PocketPeople.Interactables
 {
@@ -15,7 +16,7 @@ namespace PocketPeople.Interactables
         protected override void Interact()
         {
             base.Interact();
-            PlayerInventory.ReceiveItem(new RuntimeItem(item));
+            Inventory.ReceiveItem(new RuntimeItem(item));
             RuntimeManager.PlayOneShot(collectSound);
             Destroy(mainGameObject);
         }

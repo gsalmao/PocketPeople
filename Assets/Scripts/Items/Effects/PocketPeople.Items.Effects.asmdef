@@ -1,8 +1,8 @@
 {
-    "name": "PocketPeople.Application",
-    "rootNamespace": "PocketPeople.Application",
+    "name": "PocketPeople.Items.Effects",
+    "rootNamespace": "PocketPeople.Items.Effects",
     "references": [
-        "GUID:61c012554e1c5134ebffef7a50946f3e"
+        "GUID:645b78a5ee5328f43bec394ab9280cc4"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

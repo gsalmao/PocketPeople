@@ -1,10 +1,11 @@
-using NodeCanvas.Framework;
 using PocketPeople.Dialogues;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace PocketPeople.Interactables
 {
+    /// <summary>
+    /// Shows a dialogue.
+    /// </summary>
     public class InteractableDialogue : Interactable
     {
         [SerializeField] private Dialogue dialogue;

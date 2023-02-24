@@ -1,12 +1,13 @@
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
-using PocketPeople.Inputs;
+using PocketPeople.Input;
 using PocketPeople.Interactables;
 using PocketPeople.Items;
 using PocketPeople.Items.UI;
 using PocketPeople.UI;
 using FMODUnity;
+using PocketPeople.Items.Data;
 
 namespace PocketPeople.Player
 {
@@ -44,7 +45,7 @@ namespace PocketPeople.Player
         {
             PlayerBody = animator.transform;
             playerEffects.Init();
-            PlayerInventory.Init(initItems, initMoney, initEquipments, useItemSound);
+            Inventory.Init(initItems, initMoney, initEquipments, useItemSound);
 
             mainInput = new MainInput();
             inventoryUI.InitInventoryUI();

@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace PocketPeople.Interactables.Shopkeeper
 {
+    /// <summary>
+    /// Open the shop window.
+    /// </summary>
     public class Shopkeeper : Interactable
     {
         [SerializeField] private ShopWindow shopWindow;

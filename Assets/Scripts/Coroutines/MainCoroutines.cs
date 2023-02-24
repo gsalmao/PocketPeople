@@ -5,7 +5,7 @@ using UnityEngine;
 namespace PocketPeople.Coroutines
 {
     /// <summary>
-    /// Holds several main purpose coroutines.
+    /// Holds main purpose coroutines.
     /// </summary>
     public static class MainCoroutines
     {

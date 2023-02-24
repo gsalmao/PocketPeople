@@ -1,6 +1,7 @@
 using UnityEngine;
+using PocketPeople.Items.Effects;
 
-namespace PocketPeople.Items
+namespace PocketPeople.Items.Data
 {
     /// <summary>
     /// Consummable items.

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace PocketPeople.Items
+namespace PocketPeople.Items.Effects
 {
     /// <summary>
     /// Holds the effect of the items.
