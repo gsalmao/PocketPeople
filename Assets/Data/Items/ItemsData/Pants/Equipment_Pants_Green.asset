@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e6efdd3b67af748952ba91d892c152, type: 3}
+  m_Name: Equipment_Pants_Green
+  m_EditorClassIdentifier: 
+  itemName: Green Pants
+  description: You don't see green pants everyday, do you? You need to stand out
+    in the crowd.
+  buyPrice: 30
+  sellPrice: 15
+  icon: {fileID: 21300000, guid: b9c0864240dbea84e847c6fb6a056ff6, type: 3}
+  slot: 1
+  equipEffect: {fileID: 11400000, guid: 8cee7b522cb3fc24b86472244ee764c9, type: 2}

@@ -514,12 +514,7 @@ MonoBehaviour:
   itemDescription: {fileID: 5656265200904131723}
   buyColor: {r: 1, g: 0, b: 0, a: 1}
   sellColor: {r: 0, g: 1, b: 0, a: 1}
-  availableItems:
-  - {fileID: 11400000, guid: d7a817747c2b04e41a8a6243140033d5, type: 2}
-  - {fileID: 11400000, guid: d7a817747c2b04e41a8a6243140033d5, type: 2}
-  - {fileID: 11400000, guid: d7a817747c2b04e41a8a6243140033d5, type: 2}
-  - {fileID: 11400000, guid: d7a817747c2b04e41a8a6243140033d5, type: 2}
-  - {fileID: 11400000, guid: 064204e2c61c12e40b045806a4584651, type: 2}
+  availableItems: []
 --- !u!1 &8121109677162369978
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1984e3fd110e5204281231b61623f960, type: 3}
+  m_Name: Shirt_DarkOrange
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 1935335603, guid: dcfe99f143ff51d449633492d0846077, type: 3}
+  - {fileID: 770772624, guid: dcfe99f143ff51d449633492d0846077, type: 3}
+  - {fileID: 1302872956, guid: dcfe99f143ff51d449633492d0846077, type: 3}
+  - {fileID: 1251462735, guid: dcfe99f143ff51d449633492d0846077, type: 3}
+  - {fileID: 661614939, guid: dcfe99f143ff51d449633492d0846077, type: 3}
+  - {fileID: -2053330779, guid: dcfe99f143ff51d449633492d0846077, type: 3}
+  - {fileID: -2043423316, guid: dcfe99f143ff51d449633492d0846077, type: 3}
+  - {fileID: -598833238, guid: dcfe99f143ff51d449633492d0846077, type: 3}

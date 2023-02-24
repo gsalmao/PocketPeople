@@ -31,7 +31,6 @@ namespace PocketPeople.Player
         private void SwapSkin(SwapperEffect swapperEffect)
         {
             characterSwapper.Containers[swapperEffect.SwapperKey].Data = swapperEffect.SwapperData;
-
         }
 
     }
