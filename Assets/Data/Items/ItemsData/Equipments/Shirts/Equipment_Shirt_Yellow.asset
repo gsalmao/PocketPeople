@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e6efdd3b67af748952ba91d892c152, type: 3}
+  m_Name: Equipment_Shirt_Yellow
+  m_EditorClassIdentifier: 
+  itemName: Yellow Shirt
+  description: Yellow. Just Yellow. Also, it's a Coldplay song.
+  buyPrice: 30
+  sellPrice: 15
+  icon: {fileID: 21300000, guid: 497a338b84734244caf195fe5712c117, type: 3}
+  slot: 0
+  equipEffect: {fileID: 11400000, guid: 3f8ca2b39414c194a9dd75ec67961fd3, type: 2}

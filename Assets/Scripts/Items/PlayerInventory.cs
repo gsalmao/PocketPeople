@@ -63,12 +63,24 @@ namespace PocketPeople.Items
         {
             ItemData checkedItem = item.ItemData;
 
+            if (checkedItem is ConsummableData)
+            {
+                ConsummableData consummable = checkedItem as ConsummableData;
+
+                consummable.UseEffect.Activate();
+                if (consummable.OneTime)
+                    TakeItem(item);
+                return;
+            }
+
             if (checkedItem is EquipmentData)
             {
                 (checkedItem as EquipmentData).EquipEffect.Activate();
                 PlayerEquipment.EquipItem(item);
                 return;
             }
+
+            
 
         }
         #endregion
