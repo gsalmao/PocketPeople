@@ -1,3 +1,4 @@
+using FMODUnity;
 using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
@@ -9,6 +10,9 @@ namespace PocketPeople.UI
     /// </summary>
     public class BasicWindow : MonoBehaviour
     {
+        [SerializeField] private EventReference openMenuSound;
+        [SerializeField] private EventReference closeMenuSound;
+
         /// <summary>
         /// Bool to check if any screen is already loaded, to prevent multiple windows on screen.
         /// </summary>
@@ -26,6 +30,12 @@ namespace PocketPeople.UI
         public virtual void ToggleWindow()
         {
             isOpening = !isOpening;
+
+            if (isOpening)
+                RuntimeManager.PlayOneShot(openMenuSound);
+            else
+                RuntimeManager.PlayOneShot(closeMenuSound);
+
             WindowOnScreen = isOpening;
             animator.Play(isOpening ? Open : Close);
             OnToggleMenu(isOpening);

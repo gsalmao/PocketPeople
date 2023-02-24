@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messages:
   - speaker: Giorno
-    sentence: Have you checked the clothes in the store already?
+    sentence: Have you checked the items in the store already?
   - speaker: Giorno
     sentence: Lots of shirts to try!

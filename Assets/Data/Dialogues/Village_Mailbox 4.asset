@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messages:
   - speaker: MAILBOX #004
-    sentence: '"Home of professor Oak"'
+    sentence: '"Home of Professor Oak"'

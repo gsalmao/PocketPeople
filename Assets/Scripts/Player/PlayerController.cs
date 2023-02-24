@@ -6,6 +6,7 @@ using PocketPeople.Interactables;
 using PocketPeople.Items;
 using PocketPeople.Items.UI;
 using PocketPeople.UI;
+using FMODUnity;
 
 namespace PocketPeople.Player
 {
@@ -19,6 +20,7 @@ namespace PocketPeople.Player
         [SerializeField, FoldoutGroup("Initialization")] private List<EquipmentData> initEquipments;
         [SerializeField, FoldoutGroup("Initialization")] private List<ItemData> initItems;
         [SerializeField, FoldoutGroup("Initialization")] private int initMoney;
+        [SerializeField] private EventReference useItemSound;
 
         [Space]
 
@@ -41,8 +43,8 @@ namespace PocketPeople.Player
         private void Awake()
         {
             PlayerBody = animator.transform;
-            PlayerInventory.Init(initItems, initMoney, initEquipments);
             playerEffects.Init();
+            PlayerInventory.Init(initItems, initMoney, initEquipments, useItemSound);
 
             mainInput = new MainInput();
             inventoryUI.InitInventoryUI();

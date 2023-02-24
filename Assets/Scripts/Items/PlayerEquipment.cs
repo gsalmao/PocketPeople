@@ -18,13 +18,15 @@ namespace PocketPeople.Items
 
             foreach(RuntimeItem newEquip in newEquipments)
             {
-                EquipmentSlot newEquipSlot = (newEquip.ItemData as EquipmentData).Slot;
+                EquipmentData equipmentData = newEquip.ItemData as EquipmentData;
+                EquipmentSlot newEquipSlot = equipmentData.Slot;
 
                 if (slots.ContainsKey(newEquipSlot))   //Safety measure to prevent initializing two items in the same slot.
                     continue;
 
                 equippedItems.Add(newEquip);
                 slots.Add((newEquip.ItemData as EquipmentData).Slot, newEquip);
+                equipmentData.EquipEffect.Activate();
             }
         }
 

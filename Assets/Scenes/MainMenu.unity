@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quit Game
       objectReference: {fileID: 0}
+    - target: {fileID: 1224634586525588246, guid: c506c9a470e38154b9c0ed44d9737877, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1224634586525588247, guid: c506c9a470e38154b9c0ed44d9737877, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1267,6 +1271,10 @@ PrefabInstance:
     - target: {fileID: 1224634586525588245, guid: c506c9a470e38154b9c0ed44d9737877, type: 3}
       propertyPath: m_Name
       value: New Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 1224634586525588246, guid: c506c9a470e38154b9c0ed44d9737877, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 1224634586525588247, guid: c506c9a470e38154b9c0ed44d9737877, type: 3}
       propertyPath: m_Enabled

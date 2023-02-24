@@ -10,7 +10,7 @@ namespace PocketPeople.Items.UI
         [SerializeField, FoldoutGroup("References")] private ItemsMenu inventoryMenu;
         [SerializeField, FoldoutGroup("References")] private ItemDescription description;
         [SerializeField, FoldoutGroup("References")] private TextMeshProUGUI playerMoney;
-
+        
         public void InitInventoryUI()
         {
             inventoryMenu.Init();
@@ -36,7 +36,6 @@ namespace PocketPeople.Items.UI
         public override void ToggleWindow()
         {
             base.ToggleWindow();
-
             foreach (ItemButton itemButton in inventoryMenu.ItemButtons)
                 itemButton.SetButtonActive(isOpening);
         }

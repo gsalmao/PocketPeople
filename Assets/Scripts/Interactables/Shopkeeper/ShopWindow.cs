@@ -5,6 +5,7 @@ using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using FMODUnity;
 
 namespace PocketPeople.Interactables.Shopkeeper
 {
@@ -18,6 +19,9 @@ namespace PocketPeople.Interactables.Shopkeeper
 
         [SerializeField, FoldoutGroup("Shopkeeper Settings")] private Color buyColor;
         [SerializeField, FoldoutGroup("Shopkeeper Settings")] private Color sellColor;
+
+        [SerializeField] private EventReference tradeSound;
+
         [SerializeField] private List<ItemData> availableItems;
 
         public void InitShopWindow()
@@ -73,7 +77,7 @@ namespace PocketPeople.Interactables.Shopkeeper
 
             PlayerInventory.ReceiveMoney(itemButton.Item.ItemData.SellPrice);
             PlayerInventory.TakeItem(itemButton.Item);
-
+            RuntimeManager.PlayOneShot(tradeSound);
             shopMenu.CreateButton(itemButton.Item, OnBuyHover, OnUnhover, OnBuy);
             playerMenu.DeleteButton(itemButton);
             OnUnhover();
@@ -97,7 +101,7 @@ namespace PocketPeople.Interactables.Shopkeeper
 
             PlayerInventory.ReceiveItem(itemButton.Item);
             PlayerInventory.TakeMoney(itemButton.Item.ItemData.BuyPrice);
-
+            RuntimeManager.PlayOneShot(tradeSound);
             playerMenu.CreateButton(itemButton.Item, OnSellHover, OnUnhover, OnSell);
             shopMenu.DeleteButton(itemButton);
             OnUnhover();

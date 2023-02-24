@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{90510d5e-da35-4097-b82f-4ba35e9e23b3}">
 		<property name="name">
-			<value>OpenDialogue</value>
+			<value>OpenWindow</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{f0abd73b-1b14-4f5b-8b1b-d1a0f0e083a5}</destination>
+			<destination>{53083514-cfbb-46b6-bdf2-b637547e092b}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{252390f0-1f80-4362-b35d-76a87ee22c5c}</destination>

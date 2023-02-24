@@ -1028,6 +1028,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b48960643996cf4588053eb888c50b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openMenuSound:
+    Guid:
+      Data1: -1873736354
+      Data2: 1083693621
+      Data3: -1555353672
+      Data4: -1289511330
+    Path: event:/SFX/OpenWindow
+  closeMenuSound:
+    Guid:
+      Data1: 596677030
+      Data2: 1311458502
+      Data3: 374083737
+      Data4: -770999023
+    Path: event:/SFX/CloseWindow
   animator: {fileID: 5371094967905422552}
   inventoryMenu: {fileID: 7427642885589079892}
   description: {fileID: 2524375701344574336}
@@ -1420,6 +1434,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2b93377680f8fe44aba53ad20d2114f5, type: 2}
   - {fileID: 11400000, guid: d4a65a62022b18a46a0da9e69129ad8b, type: 2}
   initMoney: 100
+  useItemSound:
+    Guid:
+      Data1: 376671083
+      Data2: 1095799847
+      Data3: -347062886
+      Data4: 285418794
+    Path: event:/SFX/UseItem
   rb2d: {fileID: 6060675189045118065}
   animator: {fileID: 6453011894652843135}
   inventoryUI: {fileID: 2769814235886594427}

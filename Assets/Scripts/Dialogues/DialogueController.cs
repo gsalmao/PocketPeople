@@ -20,8 +20,6 @@ namespace PocketPeople.Dialogues
         [SerializeField, FoldoutGroup("References")] private TextAnimatorPlayer sentencePlayer;
         [SerializeField, FoldoutGroup("References")] private TextMeshProUGUI sentence;
         [SerializeField, FoldoutGroup("References")] private TextMeshProUGUI speaker;
-        [SerializeField, FoldoutGroup("Sounds")] private EventReference openDialogue;
-        [SerializeField, FoldoutGroup("Sounds")] private EventReference closeDialogue;
         [SerializeField, FoldoutGroup("Sounds")] private EventReference typewriter;
         private static Action<Dialogue> OnShowMessage = delegate { };
 
@@ -43,7 +41,7 @@ namespace PocketPeople.Dialogues
             sentencePlayer.onTextShowed.RemoveListener(OnTypewriterStop);
             sentencePlayer.onCharacterVisible.RemoveListener(OnType);
         }
-        [Button("test")]    //TODO: remove
+
         public static void ShowDialogue(Dialogue dialogue) => OnShowMessage(dialogue);
 
         public void FirstMessage()
@@ -65,7 +63,6 @@ namespace PocketPeople.Dialogues
                 sentence.text = messages[index].Sentence;
             else
             {
-                RuntimeManager.PlayOneShot(closeDialogue);
                 OnEndDialogue();
                 ToggleWindow();
             }
@@ -76,7 +73,6 @@ namespace PocketPeople.Dialogues
             if (isOpening)
                 return;
 
-            RuntimeManager.PlayOneShot(openDialogue);
             index = 0;
             messages = dialogue.Messages;
             speaker.text = messages[index].Speaker;

@@ -38,7 +38,11 @@ namespace PocketPeople.CursorEntities
         private bool pointerOverThis = false;
 
         protected virtual void OnEnable() { }
-        protected virtual void OnDisable() => CursorController.SetCursor(CursorType.Idle);
+        protected virtual void OnDisable()
+        {
+            pointerOverThis = false;
+            CursorController.SetCursor(CursorType.Idle);
+        }
 
         public void OnPointerEnter(PointerEventData eventData)
         {

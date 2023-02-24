@@ -506,6 +506,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66400920564cbc74b914cd352a084b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openMenuSound:
+    Guid:
+      Data1: -1873736354
+      Data2: 1083693621
+      Data3: -1555353672
+      Data4: -1289511330
+    Path: event:/SFX/OpenWindow
+  closeMenuSound:
+    Guid:
+      Data1: 596677030
+      Data2: 1311458502
+      Data3: 374083737
+      Data4: -770999023
+    Path: event:/SFX/CloseWindow
   animator: {fileID: 4599278414196162777}
   playerMenu: {fileID: 1223739150007648889}
   shopMenu: {fileID: 6410108116501741548}
@@ -514,6 +528,13 @@ MonoBehaviour:
   itemDescription: {fileID: 5656265200904131723}
   buyColor: {r: 1, g: 0, b: 0, a: 1}
   sellColor: {r: 0, g: 1, b: 0, a: 1}
+  tradeSound:
+    Guid:
+      Data1: 269427415
+      Data2: 1228998211
+      Data3: 610338488
+      Data4: 1560033388
+    Path: event:/SFX/Shopping
   availableItems: []
 --- !u!1 &8121109677162369978
 GameObject:

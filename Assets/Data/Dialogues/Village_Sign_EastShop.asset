@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messages:
   - speaker: Clothes Shop
-    sentence: '"Buy clothes, get beautiful!'
+    sentence: '"Buy clothes, get beautiful!"'

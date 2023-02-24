@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 015b138655dfdc841a39cf3d5410599b, type: 3}
+  m_Name: HairDye_Green
+  m_EditorClassIdentifier: 
+  itemName: Green Hair Dye
+  description: Lively green, to make you feel sexy and powerful!
+  buyPrice: 50
+  sellPrice: 10
+  icon: {fileID: 21300000, guid: 2fbb43df27420d642b674b5acb3daa34, type: 3}
+  useEffect: {fileID: 11400000, guid: e5d573c542dc57147abcd07f38d48cd9, type: 2}
+  oneTime: 0

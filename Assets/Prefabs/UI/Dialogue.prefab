@@ -481,31 +481,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e506b2abd45f64db51f80bc92b8709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 7688261472356753931}
-  sentencePlayer: {fileID: 4257106991600036450}
-  sentence: {fileID: 2431366531000836206}
-  speaker: {fileID: 4870247236519698697}
-  openDialogue:
+  openMenuSound:
     Guid:
       Data1: -1873736354
       Data2: 1083693621
       Data3: -1555353672
       Data4: -1289511330
-    Path: event:/SFX/Dialogue/OpenDialogue
-  closeDialogue:
+    Path: event:/SFX/OpenWindow
+  closeMenuSound:
     Guid:
       Data1: 596677030
       Data2: 1311458502
       Data3: 374083737
       Data4: -770999023
-    Path: event:/SFX/Dialogue/CloseDialogue
+    Path: event:/SFX/CloseWindow
+  animator: {fileID: 7688261472356753931}
+  sentencePlayer: {fileID: 4257106991600036450}
+  sentence: {fileID: 2431366531000836206}
+  speaker: {fileID: 4870247236519698697}
   typewriter:
     Guid:
       Data1: -1996804890
       Data2: 1151697563
       Data3: -1730286447
       Data4: 1785137360
-    Path: event:/SFX/Dialogue/Typewriter
+    Path: event:/SFX/Typewriter
 --- !u!95 &7688261472356753931
 Animator:
   serializedVersion: 4

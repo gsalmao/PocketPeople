@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messages:
   - speaker: Pawn Shop
-    sentence: '"Lot''s of stuff!"'
+    sentence: '"Lots of stuff!"'

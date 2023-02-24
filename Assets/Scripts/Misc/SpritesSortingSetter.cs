@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PocketPeople.Entities
+namespace PocketPeople.Misc
 {
     /// <summary>
-    /// Sets the entities's sorting order according to Y position.
+    /// Sets the spriteRenderer's sorting order according to Y position.
     /// </summary>
     public class SpritesSortingSetter : MonoBehaviour
     {

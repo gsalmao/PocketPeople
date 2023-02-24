@@ -1,6 +1,6 @@
+using FMODUnity;
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace PocketPeople.Items
 {
@@ -14,16 +14,19 @@ namespace PocketPeople.Items
         public static event Action<RuntimeItem> OnTakeItem = delegate { };
 
         public static List<RuntimeItem> Items { get; private set; }
+        public static PlayerEquipment PlayerEquipment { get; private set; }
         public static int Money { get; private set; }
 
+        private static EventReference useItemSound;
         private static bool initialized = false;
 
-        public static PlayerEquipment PlayerEquipment { get; private set; }
 
-        public static void Init(List<ItemData> initItems, int newMoney, List<EquipmentData> initEquipments)
+        public static void Init(List<ItemData> initItems, int newMoney, List<EquipmentData> initEquipments, EventReference itemSound)
         {
             if (initialized)
                 return;
+
+            useItemSound = itemSound;
 
             //Inventory
             Items = new List<RuntimeItem>();
@@ -66,7 +69,7 @@ namespace PocketPeople.Items
             if (checkedItem is ConsummableData)
             {
                 ConsummableData consummable = checkedItem as ConsummableData;
-
+                RuntimeManager.PlayOneShot(useItemSound);
                 consummable.UseEffect.Activate();
                 if (consummable.OneTime)
                     TakeItem(item);
@@ -75,6 +78,7 @@ namespace PocketPeople.Items
 
             if (checkedItem is EquipmentData)
             {
+                RuntimeManager.PlayOneShot(useItemSound);
                 (checkedItem as EquipmentData).EquipEffect.Activate();
                 PlayerEquipment.EquipItem(item);
                 return;
