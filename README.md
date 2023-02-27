@@ -15,14 +15,14 @@ Here are some important assemblies:
 
 ## PocketPeople.Application
 Responsible for main application classes.
-- GameManager : MonoBehaviour: Since the game is simple, it just set the screen resolution. It also has a static debugging bool, which was used to debug scenes, preventing the SceneLoader's from auto-loading scenes.
-- SceneLoader : MonoBehaviour: Used to switch between scene and fade between them.
+- **GameManager : MonoBehaviour:** Since the game is simple, it just set the screen resolution. It also has a static debugging bool, which was used to debug scenes, preventing the SceneLoader's from auto-loading scenes.
+- **SceneLoader : MonoBehaviour:** Used to switch between scene and fade between them.
 
 ## PocketPeople.CursorEntities
 Classes that handles with the player's cursor.
-- CursorController : MonoBehaviour: Main cursor class responsible for changing it.
-- CursorModifier : MonoBehaviour: Monobehaviour class that controls the cursor's behaviour when interacting with an object.
-- ICursorCallbacks: Interface with events used to expand the CursorModifier's functionality.
+- **CursorController : MonoBehaviour:** Main cursor class responsible for changing it.
+- **CursorModifier : MonoBehaviour:** Monobehaviour class that controls the cursor's behaviour when interacting with an object.
+- **ICursorCallbacks:** Interface with events used to expand the CursorModifier's functionality.
 
 ## PocketPeople.Dialogues
 Responsible for storing the data of the dialogues and exhibiting them.
@@ -32,25 +32,25 @@ Responsible for the interaction system. It has a basic Interactable class inheri
 
 ## PocketPeople.Interactables.Shopkeeper
 Responsible for interacting with the shopkeeper and trading items.
-- Shopkeeper : Interactable: Opens the ShopWindow.
-- ShopWindow : BasicWindow: Responsible for the shop's items and the player's items, where both can be traded.
+- **Shopkeeper : Interactable:** Opens the ShopWindow.
+- **ShopWindow : BasicWindow:** Responsible for the shop's items and the player's items, where both can be traded.
 
 ## PocketPeople.Items
 The item system of the game.
-- Inventory: Controls and manages the player's belongs.
-- Equipment: Handles the player's equipped items.
-- RuntimeItem: Instance of an item. Holds a reference to an ItemData.
+- **Inventory:** Controls and manages the player's belongs.
+- **Equipment:** Handles the player's equipped items.
+- **RuntimeItem:** Instance of an item. Holds a reference to an ItemData.
 
 ## PocketPeople.Items.Data
 Store the data of the items.
-- ItemData : ScriptableObject: Basic item info.
-- EquipmentData : ItemData: Equippable items.
-- ConsummableData : ItemData: Consummable items.
+- **ItemData : ScriptableObject:** Basic item info.
+- **EquipmentData : ItemData:** Equippable items.
+- **ConsummableData : ItemData:** Consummable items.
 
 ## PocketPeople.Items.Effects
 Store the data required for the effect of the items.
-- BaseEffect : ScriptableObject: Basic item effect class. Invoke an Action whenever is activated.
-- SwapperEffect : BaseEffect: Data for swapping the Player's sprites.
+- **BaseEffect : ScriptableObject:** Basic item effect class. Invoke an Action whenever is activated.
+- **SwapperEffect : BaseEffect:** Data for swapping the Player's sprites.
 
 ## PocketPeople.Items.UI
 Responsible for drawing the item buttons on the screen and handling the Player's input once clicked on the buttons.
@@ -60,7 +60,7 @@ Holds every ActionTask created during this project, to be used inside NodeCanvas
 
 ## PocketPeople.Player
 Controls the behaviour of the player.
-- PlayerController : MonoBehaviour: Controls the Player's physics and behaviour
+- **PlayerController : MonoBehaviour:** Controls the Player's physics and behaviour
 whenever he is interacting with something.
-- PlayerEffects: Subscribe to the ItemEffect's Action and process them according to what
+- **PlayerEffects:** Subscribe to the ItemEffect's Action and process them according to what
 they are supposed to do.
