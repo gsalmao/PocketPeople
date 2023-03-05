@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using UnityEngine;
 using PocketPeople.UI;
 using TMPro;
@@ -7,9 +6,9 @@ namespace PocketPeople.Items.UI
 {
     public class InventoryUI : BasicWindow
     {
-        [SerializeField, FoldoutGroup("References")] private ItemsMenu inventoryMenu;
-        [SerializeField, FoldoutGroup("References")] private ItemDescription description;
-        [SerializeField, FoldoutGroup("References")] private TextMeshProUGUI playerMoney;
+        [SerializeField] private ItemsMenu inventoryMenu;
+        [SerializeField] private ItemDescription description;
+        [SerializeField] private TextMeshProUGUI playerMoney;
         
         public void InitInventoryUI()
         {

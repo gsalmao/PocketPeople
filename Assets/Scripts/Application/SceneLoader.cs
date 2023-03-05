@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using PocketPeople.Coroutines;
-using Sirenix.OdinInspector;
 using System.Collections.Generic;
 
 namespace PocketPeople.Application
@@ -63,7 +62,6 @@ namespace PocketPeople.Application
         /// <summary>
         /// Unload the current scene, load the next one, and set it as active.
         /// </summary>
-        [Button("Change Scene")]
         public static void ChangeScene(string nextScene, Action callback)
         {
             if (switchingScenes)

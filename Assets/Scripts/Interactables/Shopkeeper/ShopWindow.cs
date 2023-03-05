@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -15,14 +14,14 @@ namespace PocketPeople.Interactables.Shopkeeper
     /// </summary>
     public class ShopWindow : BasicWindow
     {
-        [SerializeField, FoldoutGroup("References")] private ItemsMenu playerMenu;
-        [SerializeField, FoldoutGroup("References")] private ItemsMenu shopMenu;
-        [SerializeField, FoldoutGroup("References")] private TextMeshProUGUI playerMoney;
-        [SerializeField, FoldoutGroup("References")] private TextMeshProUGUI itemPrice;
-        [SerializeField, FoldoutGroup("References")] private ItemDescription itemDescription;
+        [SerializeField] private ItemsMenu playerMenu;
+        [SerializeField] private ItemsMenu shopMenu;
+        [SerializeField] private TextMeshProUGUI playerMoney;
+        [SerializeField] private TextMeshProUGUI itemPrice;
+        [SerializeField] private ItemDescription itemDescription;
 
-        [SerializeField, FoldoutGroup("Shopkeeper Settings")] private Color buyColor;
-        [SerializeField, FoldoutGroup("Shopkeeper Settings")] private Color sellColor;
+        [SerializeField] private Color buyColor;
+        [SerializeField] private Color sellColor;
 
         [SerializeField] private EventReference tradeSound;
 

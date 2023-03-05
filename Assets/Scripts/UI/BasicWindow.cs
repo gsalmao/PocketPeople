@@ -1,5 +1,4 @@
 using FMODUnity;
-using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 
@@ -20,7 +19,7 @@ namespace PocketPeople.UI
 
         public static Action<bool> OnToggleMenu = delegate { };
 
-        [SerializeField, FoldoutGroup("References")] protected Animator animator;
+        [SerializeField] protected Animator animator;
 
         protected bool isOpening;
 

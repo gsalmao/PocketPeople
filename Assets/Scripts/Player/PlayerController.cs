@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
 using PocketPeople.Input;
@@ -18,20 +17,20 @@ namespace PocketPeople.Player
     {
         public static Transform PlayerBody { get; private set; }
 
-        [SerializeField, FoldoutGroup("Initialization")] private List<EquipmentData> initEquipments;
-        [SerializeField, FoldoutGroup("Initialization")] private List<ItemData> initItems;
-        [SerializeField, FoldoutGroup("Initialization")] private int initMoney;
+        [SerializeField] private List<EquipmentData> initEquipments;
+        [SerializeField] private List<ItemData> initItems;
+        [SerializeField] private int initMoney;
         [SerializeField] private EventReference useItemSound;
 
         [Space]
 
-        [SerializeField, FoldoutGroup("References")] private Rigidbody2D rb2d;
-        [SerializeField, FoldoutGroup("References")] private Animator animator;
-        [SerializeField, FoldoutGroup("References")] private InventoryUI inventoryUI;
-        [SerializeField, FoldoutGroup("References")] private GameObject interactionSight;
-        [SerializeField, FoldoutGroup("References")] private float speed;
+        [SerializeField] private Rigidbody2D rb2d;
+        [SerializeField] private Animator animator;
+        [SerializeField] private InventoryUI inventoryUI;
+        [SerializeField] private GameObject interactionSight;
+        [SerializeField] private float speed;
 
-        [SerializeField, HideLabel] private PlayerEffects playerEffects;
+        [SerializeField] private PlayerEffects playerEffects;
 
         private MainInput mainInput;
         private Vector3 currentRotation = new Vector3(0f, 0f, 0f);

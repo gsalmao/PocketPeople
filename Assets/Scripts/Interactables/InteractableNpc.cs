@@ -1,6 +1,5 @@
 using NodeCanvas.Framework;
 using PocketPeople.Dialogues;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace PocketPeople.Interactables
@@ -10,9 +9,9 @@ namespace PocketPeople.Interactables
     /// </summary>
     public class InteractableNpc : InteractableDialogue
     {
-        [SerializeField, FoldoutGroup("NodeCanvas References")] private Transform treeOwner;
-        [SerializeField, FoldoutGroup("NodeCanvas References")] private SignalDefinition startDialogueSignal;
-        [SerializeField, FoldoutGroup("NodeCanvas References")] private SignalDefinition endDialogueSignal;
+        [SerializeField] private Transform treeOwner;
+        [SerializeField] private SignalDefinition startDialogueSignal;
+        [SerializeField] private SignalDefinition endDialogueSignal;
 
         protected override void Interact()
         {

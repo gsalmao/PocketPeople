@@ -21,7 +21,7 @@ namespace PocketPeople.UI
 
         private void OnEnable() => mainInput.Enable();
         private void OnDisable() => mainInput.Disable();
-
+        
         public void ToggleQuitMenu()
         {
             if (isOpen)
@@ -33,7 +33,7 @@ namespace PocketPeople.UI
         }
 
         public void QuitGame() => UnityEngine.Application.Quit();
-
+        
         private void OpenMenu()
         {
             Time.timeScale = 0f;

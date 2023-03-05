@@ -1,7 +1,6 @@
 using Febucci.UI;
 using FMODUnity;
 using PocketPeople.UI;
-using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
 using TMPro;
@@ -16,13 +15,14 @@ namespace PocketPeople.Dialogues
     {
         public static event Action OnEndDialogue = delegate { };
 
-        [SerializeField, FoldoutGroup("References")] private TextAnimatorPlayer sentencePlayer;
-        [SerializeField, FoldoutGroup("References")] private TextMeshProUGUI sentence;
-        [SerializeField, FoldoutGroup("References")] private TextMeshProUGUI speaker;
-        [SerializeField, FoldoutGroup("Sounds")] private EventReference typewriter;
+        [SerializeField] private TextAnimatorPlayer sentencePlayer;
+        [SerializeField] private TextMeshProUGUI sentence;
+        [SerializeField] private TextMeshProUGUI speaker;
+        [SerializeField] private EventReference typewriter;
         private static Action<Dialogue> OnShowMessage = delegate { };
 
         private List<DialogueMessage> messages;
+
         private int index;
         private bool isTyping;
 
@@ -40,7 +40,7 @@ namespace PocketPeople.Dialogues
             sentencePlayer.onTextShowed.RemoveListener(OnTypewriterStop);
             sentencePlayer.onCharacterVisible.RemoveListener(OnType);
         }
-
+        
         public static void ShowDialogue(Dialogue dialogue) => OnShowMessage(dialogue);
 
         public void FirstMessage()

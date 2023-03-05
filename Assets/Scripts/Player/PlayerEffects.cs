@@ -1,6 +1,5 @@
 using UnityEngine;
 using PocketPeople.SpriteSwap;
-using Sirenix.OdinInspector;
 using PocketPeople.Items.Effects;
 
 namespace PocketPeople.Player
@@ -11,7 +10,7 @@ namespace PocketPeople.Player
     [System.Serializable]
     public class PlayerEffects
     {
-        [SerializeField, FoldoutGroup("Effects References")] private CharacterSwapper characterSwapper;
+        [SerializeField] private CharacterSwapper characterSwapper;
 
         public void Init() => BaseEffect.OnActivate += ApplyEffect;
         ~PlayerEffects() => BaseEffect.OnActivate -= ApplyEffect;

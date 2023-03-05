@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +10,8 @@ namespace PocketPeople.Items.UI
     /// </summary>
     public class ItemsMenu : MonoBehaviour
     {
-        [SerializeField, FoldoutGroup("References")] private Transform inventoryContent;
-        [SerializeField, FoldoutGroup("References")] private ItemButton itemButtonPrefab;
+        [SerializeField] private Transform inventoryContent;
+        [SerializeField] private ItemButton itemButtonPrefab;
         public List<ItemButton> ItemButtons => itemButtons;
 
         private ObjectPool<ItemButton> buttonsPool;

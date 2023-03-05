@@ -1,5 +1,4 @@
 using UnityEngine;
-using Sirenix.OdinInspector;
 
 namespace PocketPeople.Items.Data
 {
@@ -9,15 +8,15 @@ namespace PocketPeople.Items.Data
     [CreateAssetMenu(fileName = "Simple Item", menuName = "ScriptableObjects/Items/Simple Item", order = 0)]
     public class ItemData : ScriptableObject
     {
-        [SerializeField, LabelText("Name"), FoldoutGroup("Item Properties")]
+        [SerializeField]
         private string itemName;
-        [SerializeField, TextArea(3, 3), FoldoutGroup("Item Properties")]
+        [SerializeField, TextArea(3, 3)]
         private string description;
-        [SerializeField, FoldoutGroup("Item Properties")]
+        [SerializeField]
         private int buyPrice;
-        [SerializeField, FoldoutGroup("Item Properties")]
+        [SerializeField]
         private int sellPrice;
-        [SerializeField, HideLabel, PreviewField(ObjectFieldAlignment.Left, Height = 100f), FoldoutGroup("Item Properties")]
+        [SerializeField]
         private Sprite icon;
 
         public Sprite Icon => icon;
