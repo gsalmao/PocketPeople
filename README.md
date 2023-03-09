@@ -2,14 +2,20 @@
 
 Pocket People is a top-down adventure game, where the player can walk around, buy/sell items, equip or use certain items, collect items in the map, talk with people and interact with world objects. It is separated in several assemblies.
 
+https://user-images.githubusercontent.com/8738336/224033068-05896dca-c20e-4f40-8db5-b403b2cb85e7.mp4
+
+
 ## Interact with nearby objects to read / talk to them.
 ![gif1](https://user-images.githubusercontent.com/8738336/221646460-b7d01635-4539-4d56-9e3e-bf10d1dc0f79.gif)
+
 
 ## Buy consummables and use them
 ![gif2](https://user-images.githubusercontent.com/8738336/221646747-19f7b9aa-b2b2-428f-86e7-8f99514ab214.gif)
 
+
 ## Buy new clothes in the clothes shop
 ![gif3](https://user-images.githubusercontent.com/8738336/221646873-5212fd53-9ffd-4571-aaa1-879a5bac8b17.gif)
+
 
 Here are some important assemblies:
 
