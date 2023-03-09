@@ -7,6 +7,7 @@ using PocketPeople.Items.UI;
 using PocketPeople.UI;
 using FMODUnity;
 using PocketPeople.Items.Data;
+using PocketPeople.SpriteSwap;
 
 namespace PocketPeople.Player
 {
@@ -21,17 +22,15 @@ namespace PocketPeople.Player
         [SerializeField] private List<ItemData> initItems;
         [SerializeField] private int initMoney;
         [SerializeField] private EventReference useItemSound;
-
-        [Space]
-
+        [SerializeField] private CharacterSwapper characterSwapper;
         [SerializeField] private Rigidbody2D rb2d;
         [SerializeField] private Animator animator;
         [SerializeField] private InventoryUI inventoryUI;
         [SerializeField] private GameObject interactionSight;
         [SerializeField] private float speed;
 
-        [SerializeField] private PlayerEffects playerEffects;
-
+        
+        private PlayerEffects playerEffects;
         private MainInput mainInput;
         private Vector3 currentRotation = new Vector3(0f, 0f, 0f);
         private Vector2 moveDirection;
@@ -43,7 +42,8 @@ namespace PocketPeople.Player
         private void Awake()
         {
             PlayerBody = animator.transform;
-            playerEffects.Init();
+            playerEffects = new PlayerEffects();
+            playerEffects.Init(characterSwapper);
             Inventory.Init(initItems, initMoney, initEquipments, useItemSound);
 
             mainInput = new MainInput();
@@ -60,7 +60,7 @@ namespace PocketPeople.Player
 
         private void OnEnable() => mainInput.Enable();
         private void OnDisable() => mainInput.Disable();
-
+        
         private void TogglePlayerController(bool value)
         {
             rb2d.velocity = Vector2.zero;

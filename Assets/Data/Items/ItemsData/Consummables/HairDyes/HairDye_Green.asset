@@ -18,4 +18,4 @@ MonoBehaviour:
   sellPrice: 10
   icon: {fileID: 21300000, guid: 2fbb43df27420d642b674b5acb3daa34, type: 3}
   useEffect: {fileID: 11400000, guid: e5d573c542dc57147abcd07f38d48cd9, type: 2}
-  oneTime: 0
+  oneTime: 1

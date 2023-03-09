@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:Label text="Player Controller" display-tooltip-when-elided="true" style="align-items: center; justify-content: center; white-space: nowrap; -unity-text-align: lower-center; font-size: 20px; -unity-font-style: bold;" />
+    <ui:Foldout text="References" name="References" style="background-color: rgb(80, 80, 80); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; margin-bottom: 3px;">
+        <uie:PropertyField name="inventoryUI" binding-path="inventoryUI" style="-unity-text-align: upper-left;" />
+        <uie:PropertyField name="interactionSight" binding-path="interactionSight" style="-unity-text-align: upper-left;" />
+        <uie:PropertyField name="characterSwapper" binding-path="characterSwapper" style="-unity-text-align: upper-left;" />
+        <uie:PropertyField name="rb" binding-path="rb2d" style="-unity-text-align: upper-left;" />
+        <uie:PropertyField name="animator" binding-path="animator" style="-unity-text-align: upper-left;" />
+    </ui:Foldout>
+    <ui:Foldout text="Settings" name="Settings" style="background-color: rgb(80, 80, 80); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
+        <uie:IntegerField label="Start Money" value="0" name="Money" binding-path="initMoney" style="padding-right: 10px; color: rgb(0, 185, 73);" />
+        <uie:PropertyField name="useItemSound" binding-path="useItemSound" style="padding-right: 10px;" />
+        <uie:PropertyField name="initEquipments" binding-path="initEquipments" style="padding-right: 10px;" />
+        <uie:PropertyField name="initItems" binding-path="initItems" style="padding-right: 10px;" />
+    </ui:Foldout>
+</ui:UXML>

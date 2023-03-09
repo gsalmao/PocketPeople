@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: dcfb7768ef1fd1a4d953db1ea9851a0f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - playerController_UXML: {fileID: 9197481963319205126, guid: c552dc7c9c6ba3642b471fdf2347cd2c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

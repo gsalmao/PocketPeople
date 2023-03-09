@@ -402,7 +402,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 50, y: -50}
+  m_AnchoredPosition: {x: 49.999817, y: -50}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1706185055030534969
@@ -1270,6 +1270,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3697504842052371178, guid: a4330bf1d34224b43b2a3182f393127d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000015258789
+      objectReference: {fileID: 0}
     - target: {fileID: 4787958946397354282, guid: a4330bf1d34224b43b2a3182f393127d, type: 3}
       propertyPath: m_Name
       value: InventoryMenu
@@ -1321,11 +1325,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7926652884614750403, guid: 86b6b05f1b498c04cbd5c50e5910e3f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 25.26
       objectReference: {fileID: 0}
     - target: {fileID: 7926652884614750403, guid: 86b6b05f1b498c04cbd5c50e5910e3f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -39.94
       objectReference: {fileID: 0}
     - target: {fileID: 7926652884614750403, guid: 86b6b05f1b498c04cbd5c50e5910e3f1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1337,15 +1341,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7926652884614750403, guid: 86b6b05f1b498c04cbd5c50e5910e3f1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7926652884614750403, guid: 86b6b05f1b498c04cbd5c50e5910e3f1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7926652884614750403, guid: 86b6b05f1b498c04cbd5c50e5910e3f1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7926652884614750403, guid: 86b6b05f1b498c04cbd5c50e5910e3f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1429,11 +1433,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0923c63cdd3ad8a47b9549aafa4f234a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initEquipments: []
-  initItems:
+  initEquipments:
   - {fileID: 11400000, guid: 2b93377680f8fe44aba53ad20d2114f5, type: 2}
-  - {fileID: 11400000, guid: d4a65a62022b18a46a0da9e69129ad8b, type: 2}
-  initMoney: 100
+  - {fileID: 11400000, guid: 2c22e91951efaf944b73bade8b21ab7d, type: 2}
+  initItems:
+  - {fileID: 11400000, guid: 840de37971a764041a8c31cdbf7fd803, type: 2}
+  - {fileID: 11400000, guid: 79ae99fe0d1b89348bc7cbdbc62ef915, type: 2}
+  initMoney: 50
   useItemSound:
     Guid:
       Data1: 376671083
@@ -1441,13 +1447,12 @@ MonoBehaviour:
       Data3: -347062886
       Data4: 285418794
     Path: event:/SFX/UseItem
+  characterSwapper: {fileID: 6679683330091942170}
   rb2d: {fileID: 6060675189045118065}
   animator: {fileID: 6453011894652843135}
   inventoryUI: {fileID: 2769814235886594427}
   interactionSight: {fileID: 879550454218785696}
   speed: 3
-  playerEffects:
-    characterSwapper: {fileID: 6679683330091942170}
 --- !u!4 &6170124958262344062 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7926652884614750403, guid: 86b6b05f1b498c04cbd5c50e5910e3f1, type: 3}

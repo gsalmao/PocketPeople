@@ -10,9 +10,14 @@ namespace PocketPeople.Player
     [System.Serializable]
     public class PlayerEffects
     {
-        [SerializeField] private CharacterSwapper characterSwapper;
+        private CharacterSwapper characterSwapper;
 
-        public void Init() => BaseEffect.OnActivate += ApplyEffect;
+        public void Init(CharacterSwapper characterSwapper)
+        {
+            this.characterSwapper = characterSwapper;
+            BaseEffect.OnActivate += ApplyEffect;            
+        }
+        
         ~PlayerEffects() => BaseEffect.OnActivate -= ApplyEffect;
 
         private void ApplyEffect(BaseEffect effect)

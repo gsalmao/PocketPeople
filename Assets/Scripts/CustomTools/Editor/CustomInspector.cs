@@ -1,13 +1,11 @@
-using System;
 using System.Collections.Generic;
 using UnityEditor;
 using System.Reflection;
-using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace CustomTools.Editor
 {
-    [CustomEditor(typeof(Object), true)]
+    [CustomEditor(typeof(Object), true), CanEditMultipleObjects]
     public class CustomInspector : UnityEditor.Editor
     {
         public override void OnInspectorGUI()

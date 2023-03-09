@@ -1,0 +1,18 @@
+{
+    "name": "PocketPeople.Editor",
+    "rootNamespace": "PocketPeople.Editor",
+    "references": [
+        "GUID:e6ce9a74a3d9a9a4a9595b68a7d696da"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
