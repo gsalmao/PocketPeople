@@ -49,6 +49,9 @@ namespace PocketPeople.Application
             }
         }
 
+        [Button("Okay boomer")]
+        private void Test() => Debug.Log("Test");
+        
         private void OnDestroy() => OnChangeScene -= SwitchScene;
 
 

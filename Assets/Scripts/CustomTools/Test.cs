@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CustomTools
@@ -7,9 +5,9 @@ namespace CustomTools
     public class Test : MonoBehaviour
     {
         [Button]
-        private void Test1() {}
+        private void Test1() { Debug.Log("woah");}
         
-        [Button]
-        private void Test2(int num) {}
+        [Button("Testeee")]
+        private void Test2(int fuck) { Debug.Log("thuurh");}
     }
 }
